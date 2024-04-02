@@ -1,0 +1,11 @@
+servidor:
+DBGestionActivos.mssql.somee.com
+
+Usuario:
+ManuelMJLG_SQLLogin_1
+
+Contraseña:
+manuel123
+
+Nombre de la base:
+DBGestionActivos
