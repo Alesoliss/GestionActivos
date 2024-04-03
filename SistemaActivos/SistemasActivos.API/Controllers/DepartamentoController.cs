@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using SistemaActivos.DataAccess;
 using SistemaDeActivos.BusinessLogic;
 using AutoMapper;
+using SistemaActivos.Entities.Entities;
 
 namespace SistemasActivos.API.Controllers
 {
     [ApiController]
-    //[Route("/API/[controles]")]
     public class DepartamentoController : Controller
     {
         private readonly GeneralServices _generalServices;
@@ -31,13 +31,21 @@ namespace SistemasActivos.API.Controllers
             return Ok(listado);
         }
 
-        //[HttpGet("Listado")]
-        //public IActionResult List()
-        //{
-        //    var listado = _generalServices.ListadoDepto1();
-            
-        //    return Ok(listado);
-        //}
+        [HttpPost("Insertar")]
+        public IActionResult InsertarDepartamento(tbDepartamentos departamentoDto)
+        {
+            try
+            {
+                var departamento = _mapper.Map<tbDepartamentos>(departamentoDto);
+                string mensaje = _generalServices.InsertarDepto(departamento);
+                return Ok(mensaje);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error del servidorr" + ex.Message);
+            }
+        }
+
 
     }
 }

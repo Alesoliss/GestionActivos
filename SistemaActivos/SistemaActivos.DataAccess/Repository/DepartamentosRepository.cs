@@ -42,9 +42,6 @@ namespace SistemaActivos.DataAccess.Repository
                 return new RequestStatus { CodeStatus = result, MessageStatus = mensaje};
 
             }
-
-
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<tbDepartamentos> List()
@@ -56,7 +53,6 @@ namespace SistemaActivos.DataAccess.Repository
                 result = db.Query<tbDepartamentos>(sql, commandType: System.Data.CommandType.Text).ToList();
                 return result;
             }
-            //throw new NotImplementedException();
         }
 
         public RequestStatus Update(tbDepartamentos item)
