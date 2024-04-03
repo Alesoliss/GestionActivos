@@ -1,0 +1,143 @@
+CREATE OR ALTER PROCEDURE SP_Roles_Insertar
+@Role_Descripcion VARCHAR(30),
+@Role_UsuarionCreacion INT,
+@Role_FechaCreacion DATETIME
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO Acce.tbRoles (Role_Descripcion, Role_UsuarionCreacion, Role_FechaCreacion, Role_Estado)
+		VALUES(@Role_Descripcion, @Role_UsuarionCreacion, @Role_FechaCreacion, 1)
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+GO
+
+CREATE OR ALTER PROCEDURE SP_PantallasPorRoles_Insertar
+@Role_Id INT,
+@Pant_Id INT,
+@PaRo_UsuarioCreacion INT,
+@PaRo_FechaCreacion DATETIME
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO Acce.tbPantallasPorRoles (Role_Id, Pant_Id, PaRo_UsuarioCreacion, PaRo_FechaCreacion, PaRo_Estado)
+		VALUES(@Role_Id, @Pant_Id, @PaRo_UsuarioCreacion, @PaRo_FechaCreacion, 1)
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+GO
+
+CREATE OR ALTER PROCEDURE SP_Activos_Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO [Acti].[tbActivos] ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
+
+GO
+
+CREATE OR ALTER PROCEDURE SP__Insertar
+
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO ()
+		VALUES()
+		SELECT 1 AS Result;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS Result;
+	END CATCH
+END 
