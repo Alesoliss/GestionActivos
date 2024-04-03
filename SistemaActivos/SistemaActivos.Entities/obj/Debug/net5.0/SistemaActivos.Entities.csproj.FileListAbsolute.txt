@@ -1,0 +1,12 @@
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.deps.json
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.AssemblyReference.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfoInputs.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfo.cs
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb

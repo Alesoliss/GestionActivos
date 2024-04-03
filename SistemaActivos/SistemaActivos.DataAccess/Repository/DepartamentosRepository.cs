@@ -1,0 +1,67 @@
+﻿using AHM.Total.Travel.DataAccess.Repositories;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using SistemaActivos.Entities.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SistemaActivos.DataAccess.Repository
+{
+    public class DepartamentosRepository : IRepository<tbDepartamentos>
+    {
+        public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public tbDepartamentos Find(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RequestStatus Insert(tbDepartamentos item)
+        {
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("Depa_Descripcion", item.Depa_Descripcion);
+                parametro.Add("Depa_UsuarioCreacion", item.Depa_UsuarioCreacion);
+                parametro.Add("Depa_FechaCreacion", item.Depa_FechaCreacion);
+
+                var result = db.Execute(
+                    "[Gnrl].[SP_Departamentos_Insertar]", parametro,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                string mensaje = (result == 1) ? "Exito" : "Error";
+                return new RequestStatus { CodeStatus = result, MessageStatus = mensaje};
+
+            }
+
+
+            //throw new NotImplementedException();
+        }
+
+        public IEnumerable<tbDepartamentos> List()
+        {
+            const string sql = "[Gnrl].[SP_Departamentos_Listado]";
+            List<tbDepartamentos> result = new List<tbDepartamentos>();
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                result = db.Query<tbDepartamentos>(sql, commandType: System.Data.CommandType.Text).ToList();
+                return result;
+            }
+            //throw new NotImplementedException();
+        }
+
+        public RequestStatus Update(tbDepartamentos item)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

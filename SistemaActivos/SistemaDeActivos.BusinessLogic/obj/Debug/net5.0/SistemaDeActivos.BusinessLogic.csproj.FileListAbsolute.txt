@@ -1,0 +1,17 @@
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaDeActivos.BusinessLogic.deps.json
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaDeActivos.BusinessLogic.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\ref\SistemaDeActivos.BusinessLogic.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaDeActivos.BusinessLogic.pdb
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaActivos.DataAccess.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaActivos.DataAccess.pdb
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\bin\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.AssemblyInfo.cs
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.csproj.CopyComplete
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\ref\SistemaDeActivos.BusinessLogic.dll
+C:\Users\Eiden\Downloads\SistemaActivos\SistemaDeActivos.BusinessLogic\obj\Debug\net5.0\SistemaDeActivos.BusinessLogic.pdb
