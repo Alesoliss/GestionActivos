@@ -1,4 +1,5 @@
 ﻿using AHM.Total.Travel.BusinessLogic;
+using AHM.Total.Travel.DataAccess.Repositories;
 using SistemaActivos.DataAccess.Repository;
 using SistemaActivos.Entities.Entities;
 using System;
@@ -47,7 +48,31 @@ namespace SistemaDeActivos.BusinessLogic
                 return result.Error(ex.Message);
             }
         }
-            #endregion
+
+
+        public string InsertarDepto(tbDepartamentos item)
+        {
+            string mensaje = "";
+            try
+            {
+                RequestStatus status = _departamentosRepository.Insert(item);
+                if (status.CodeStatus != 1)
+                {
+                    mensaje = "Error al insertar el departamento: " + status.MessageStatus;
+                }
+                else
+                {
+                    mensaje = "Departamento insertado con éxito";
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error: " + ex.Message;
+            }
+
+            return mensaje;
+        }
+        #endregion
 
     }
 }

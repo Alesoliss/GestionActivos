@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {}
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
         "projectName": "SistemaActivos.DataAccess",
-        "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Eiden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eiden\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
-                "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
+              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
+                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
               }
             }
           }
@@ -80,21 +76,17 @@
         }
       }
     },
-    "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
         "projectName": "SistemaActivos.Entities",
-        "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
-        "packagesPath": "C:\\Users\\Eiden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.Entities\\obj\\",
+        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
+        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eiden\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,21 +130,17 @@
         }
       }
     },
-    "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
         "projectName": "SistemaDeActivos.BusinessLogic",
-        "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Eiden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eiden\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -166,8 +154,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
+              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
               }
             }
           }
@@ -200,21 +188,17 @@
         }
       }
     },
-    "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
+        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
         "projectName": "SistemasActivos.API",
-        "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
-        "packagesPath": "C:\\Users\\Eiden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemasActivos.API\\obj\\",
+        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
+        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eiden\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,11 +212,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
+              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
               },
-              "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Eiden\\Downloads\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj"
+              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj"
               }
             }
           }
@@ -268,6 +252,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
