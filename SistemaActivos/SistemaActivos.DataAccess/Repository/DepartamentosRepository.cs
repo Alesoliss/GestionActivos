@@ -34,7 +34,6 @@ namespace SistemaActivos.DataAccess.Repository
                 parametro.Add("@Depa_Descripcion", item.Depa_Descripcion);
                 parametro.Add("@Depa_UsuarioCreacion", item.Depa_UsuarioCreacion);
                 parametro.Add("@Depa_FechaCreacion", item.Depa_FechaCreacion);
-
                 var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
 
                 return new RequestStatus { CodeStatus = result, MessageStatus = "" };
