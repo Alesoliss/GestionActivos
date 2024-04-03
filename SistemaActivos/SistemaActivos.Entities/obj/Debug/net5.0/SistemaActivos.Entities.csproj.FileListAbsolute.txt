@@ -10,3 +10,15 @@ C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0
 C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
 C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
 C:\Users\Eiden\Downloads\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.deps.json
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.AssemblyReference.cache
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfo.cs
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\LAB2\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb

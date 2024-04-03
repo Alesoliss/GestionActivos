@@ -2119,6 +2119,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "SistemaActivos.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SistemaActivos.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaActivos.Common.dll": {}
+        }
+      },
       "SistemaActivos.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7418,6 +7428,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "SistemaActivos.Common/1.0.0": {
+      "type": "project",
+      "path": "../SistemaActivos.Common/SistemaActivos.Common.csproj",
+      "msbuildProject": "../SistemaActivos.Common/SistemaActivos.Common.csproj"
+    },
     "SistemaActivos.DataAccess/1.0.0": {
       "type": "project",
       "path": "../SistemaActivos.DataAccess/SistemaActivos.DataAccess.csproj",
@@ -7442,6 +7457,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Newtonsoft.Json >= 13.0.3",
+      "SistemaActivos.Common >= 1.0.0",
       "SistemaActivos.DataAccess >= 1.0.0",
       "SistemaDeActivos.BusinessLogic >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -7474,6 +7490,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\LAB2\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj": {
+              "projectPath": "C:\\Users\\LAB2\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj"
+            },
             "C:\\Users\\LAB2\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
               "projectPath": "C:\\Users\\LAB2\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
             },

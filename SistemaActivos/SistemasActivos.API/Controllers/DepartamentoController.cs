@@ -32,21 +32,6 @@ namespace SistemasActivos.API.Controllers
             return Ok(listado);
         }
 
-        //[HttpPost("Insertar")]
-        //public IActionResult InsertarDepartamento(tbDepartamentos departamentoDto)
-        //{
-        //    try
-        //    {
-        //        var departamento = _mapper.Map<tbDepartamentos>(departamentoDto);
-        //        string mensaje = _generalServices.InsertarDepto(departamento);
-        //        return Ok(mensaje);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error del servidorr" + ex.Message);
-        //    }
-        //}
-
 
         [HttpPost("Insert")]
         public IActionResult Insert(DepartamentosViewmodel item)

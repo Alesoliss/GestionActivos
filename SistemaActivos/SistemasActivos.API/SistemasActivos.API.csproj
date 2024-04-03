@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SistemaActivos.Common\SistemaActivos.Common.csproj" />
     <ProjectReference Include="..\SistemaActivos.DataAccess\SistemaActivos.DataAccess.csproj" />
     <ProjectReference Include="..\SistemaDeActivos.BusinessLogic\SistemaDeActivos.BusinessLogic.csproj" />
   </ItemGroup>

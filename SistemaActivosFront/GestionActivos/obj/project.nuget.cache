@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0ts+VZxWoAeJsHD6MMvRN0frkK38EpbdgNNkX+MBT7gqP/JL3yrheJvQnwOEV/Qn/u/xhHYIiVZjBXRoObNBxg==",
+  "dgSpecHash": "qIUBBRo2z3PXmrfn0whbKzD3BtMNIzmz6eWPmDoPNQuTNDfeXk9kCMnzcIcLRiKE7ALJiFg3DTjboZ1OLMJMjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\LAB2\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LAB2\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -200,4 +200,8 @@
     <None Include="wwwroot\vendors\parsleyjs\bower_components\uwidget\uwidget.less" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>

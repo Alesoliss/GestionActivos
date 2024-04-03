@@ -13,5 +13,11 @@ namespace SistemasActivos.API.Model
 
         [Display(Name = "Departamento")]
         public string Depa_Descripcion { get; set; }
+        public int? Depa_UsuarioCreacion { get; set; }
+        public DateTime? Depa_FechaCreacion { get; set; }
+        public int? Depa_UsuarioModificacion { get; set; }
+        public DateTime? Depa_FechaModificacion { get; set; }
+
+      
     }
 }
