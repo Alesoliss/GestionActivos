@@ -10,33 +10,47 @@ using System.Threading.Tasks;
 namespace GestionActivos.Controllers
 {
     public class DepartamentosController : Controller
-        //cambiaaaaaar
     {
-        private readonly DepartamentoServicios _activitiesServices;
-   
-
-        public DepartamentosController(DepartamentoServicios generalService)
+        public DepartamentoServicios _departamentoServicios;
+        public DepartamentosController(DepartamentoServicios departamentoServicios)
         {
-            _activitiesServices = generalService;
-
+            _departamentoServicios = departamentoServicios;
         }
-        [HttpGet]
+        // GET: DepartamentosController
         public async Task<IActionResult> Index()
         {
             try
             {
-                string token = HttpContext.User.FindFirst("Token").Value;
-                var type = await _activitiesServices.TypesActivitiesList();
-                    IEnumerable<DepartamentosViewmodel> data_type = (IEnumerable<DepartamentosViewmodel>)type.Data;
-                ViewBag.TiAc_ID = new SelectList(data_type, "ID", "Descripcion");
                 var model = new List<DepartamentosViewmodel>();
-                var list = await _activitiesServices.ActivityList(token);
-
+                var list = await _departamentoServicios.ObtenerDepartamentoList();
                 return View(list.Data);
             }
-            catch(Exception)
+            catch (Exception ex)
             {
-                return RedirectToAction("Error", "Home");
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: DepartamentosController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(DepartamentosViewmodel item)
+        {
+            try
+            {
+                item.Depa_UsuarioCreacion = 1;
+                item.Depa_FechaCreacion = DateTime.Now;
+                var list = await _departamentoServicios.CrearDepartamento(item);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(item);
             }
         }
     }

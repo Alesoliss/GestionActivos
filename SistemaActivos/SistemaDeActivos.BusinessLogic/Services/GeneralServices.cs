@@ -21,19 +21,8 @@ namespace SistemaDeActivos.BusinessLogic
 
         #region Departamento
 
-        public IEnumerable<tbDepartamentos> ListadoDepto(out string error)
-        {
-            try
-            {
-                error = string.Empty;
-                return _departamentosRepository.List();
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return Enumerable.Empty<tbDepartamentos>();
-            }
-        }
+ 
+
 
         public ServiceResult ListadoDepto1()
         {

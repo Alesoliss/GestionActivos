@@ -45,7 +45,9 @@ namespace GestionActivos.WebAPI
                 if (Content == null)
                     return null;
 
-                return new StringContent(JsonConvert.SerializeObject(Content), Encoding.UTF8, "application/json");
+                var serializedJson = JsonConvert.SerializeObject(Content);
+                var stringContent = new StringContent(serializedJson, Encoding.UTF8, "application/json");
+                return stringContent;
             }
         }
 
