@@ -1951,6 +1951,7 @@
           "Dapper": "2.0.90",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "SistemaActivos.Common": "1.0.0",
           "SistemaActivos.Entities": "1.0.0"
         },
         "runtime": {

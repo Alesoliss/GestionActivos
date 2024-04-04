@@ -7,11 +7,12 @@ using SistemaActivos.DataAccess;
 using SistemaDeActivos.BusinessLogic;
 using AutoMapper;
 using SistemaActivos.Entities.Entities;
-using SistemasActivos.API.Model;
+using SistemaActivos.Common.Model;
 
 namespace SistemasActivos.API.Controllers
 {
     [ApiController]
+    [Route("/API/[controller]")]
     public class DepartamentoController : Controller
     {
         private readonly GeneralServices _generalServices;

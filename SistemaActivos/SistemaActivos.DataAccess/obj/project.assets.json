@@ -1491,6 +1491,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "SistemaActivos.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SistemaActivos.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaActivos.Common.dll": {}
+        }
+      },
       "SistemaActivos.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5731,6 +5741,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "SistemaActivos.Common/1.0.0": {
+      "type": "project",
+      "path": "../SistemaActivos.Common/SistemaActivos.Common.csproj",
+      "msbuildProject": "../SistemaActivos.Common/SistemaActivos.Common.csproj"
+    },
     "SistemaActivos.Entities/1.0.0": {
       "type": "project",
       "path": "../SistemaActivos.Entities/SistemaActivos.Entities.csproj",
@@ -5742,28 +5757,24 @@
       "Dapper >= 2.0.90",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
+      "SistemaActivos.Common >= 1.0.0",
       "SistemaActivos.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aleso\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\LAB1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
       "projectName": "SistemaActivos.DataAccess",
-      "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5777,8 +5788,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
-              "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
+            "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj": {
+              "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj"
+            },
+            "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
+              "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
             }
           }
         }

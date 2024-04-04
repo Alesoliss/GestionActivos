@@ -34,3 +34,14 @@ C:\Users\aleso\OneDrive\Escritorio\GestionActivos\SistemaActivos\SistemaActivos.
 C:\Users\aleso\OneDrive\Escritorio\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
 C:\Users\aleso\OneDrive\Escritorio\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
 C:\Users\aleso\OneDrive\Escritorio\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.deps.json
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\bin\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfoInputs.cache
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.AssemblyInfo.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.CoreCompileInputs.cache
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb

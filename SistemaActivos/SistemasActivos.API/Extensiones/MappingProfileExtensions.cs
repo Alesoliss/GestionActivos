@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using SistemaActivos.Common.Model;
 using SistemaActivos.Entities.Entities;
-using SistemasActivos.API.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,8 @@ namespace SistemasActivos.API.Extensiones
         public MappingProfileExtensions()
         {
             CreateMap<DepartamentosViewmodel, tbDepartamentos>().ReverseMap();
+            CreateMap<EmpleadosViewmodel, tbDepartamentos>().ReverseMap();
+
         }
     }
 }

@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = SistemaDeActivos.BusinessLogic
-build_property.ProjectDir = C:\Users\aleso\OneDrive\Escritorio\GestionActivos\SistemaActivos\SistemaDeActivos.BusinessLogic\
+build_property.ProjectDir = C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaDeActivos.BusinessLogic\

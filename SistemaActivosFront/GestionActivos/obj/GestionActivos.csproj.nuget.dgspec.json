@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj": {}
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj": {
+    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj",
+        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj",
         "projectName": "GestionActivos",
-        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj",
-        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivosFront\\GestionActivos\\obj\\",
+        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\GestionActivos.csproj",
+        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivosFront\\GestionActivos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

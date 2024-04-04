@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SistemaActivos.Common\SistemaActivos.Common.csproj" />
     <ProjectReference Include="..\SistemaActivos.Entities\SistemaActivos.Entities.csproj" />
   </ItemGroup>
 

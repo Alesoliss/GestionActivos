@@ -24,7 +24,7 @@ namespace GestionActivos.Servicios
             {
                 var response = await _api.Get<IEnumerable<DepartamentosViewmodel>, IEnumerable<DepartamentosViewmodel>>(req =>
                 {
-                    req.Path = $"API/Departamento/List";
+                    req.Path = $"/API/Departamento/Listado";
                 });
                 if (!response.Success)
                 {

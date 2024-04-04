@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <!-- Bootstrap -->
-    <link href="~/css/bootstrap/dist/css/boostrap.min.css" rel="stylesheet">
+    <link href="~/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link href="~/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -74,27 +75,29 @@
                                         <li><a href="form_buttons.html">Form Buttons</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-cogs"></i> General <span class="fa fa-chevron-down"></span></a></li>
-                                <ul class="nav child_menu">
-                                    <li class="nav-item"> <a class="nav-link" asp-controller="DepartamentosController" asp-action="Index">Departamentos</a></li>
+                                <li>
+                                    <a><i class="fa fa-cogs"></i> General <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li class="nav-item"> <a class="nav-link" asp-controller="Departamentos" asp-action="Index">Departamentos</a></li>
 
-                                    <li><a href="general_elements.html">General Elements</a></li>
-                                    <li><a href="media_gallery.html">Media Gallery</a></li>
-                                    <li><a href="typography.html">Typography</a></li>
-                                    <li><a href="icons.html">Icons</a></li>
-                                    <li><a href="glyphicons.html">Glyphicons</a></li>
-                                    <li><a href="widgets.html">Widgets</a></li>
-                                    <li><a href="invoice.html">Invoice</a></li>
-                                    <li><a href="inbox.html">Inbox</a></li>
-                                    <li><a href="calendar.html">Calendar</a></li>
-                                </ul>
+
+
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
                                 </li>
-                                <li><a><i class="fa fa-cubes"></i> Activos <span class="fa fa-chevron-down"></span></a></li>
-                                <ul class="nav child_menu">
-                                    <li><a href="tables.html">Tables</a></li>
-                                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                                </ul>
+                                <li>
+                                    <a><i class="fa fa-cubes"></i> Activos <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li class="nav-item"> <a class="nav-link" asp-controller="Departamentos" asp-action="Index">Departamentos</a></li>
+                                        <li class="nav-item"> <a class="nav-link" asp-controller="Departamentos" asp-action="Index">Departamentos</a></li>
+
+                                        
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
                                 </li>
+
+
+                              
 
                             </ul>
                         </div>
@@ -154,6 +157,19 @@
                         </div>
 
                     </div>
+
+                    <div class="burbujas">
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                    </div>
                     <!-- contenido -->
 
 
@@ -193,18 +209,18 @@
 
 </body>
 </html>
-      <script>
-          window.addEventListener('pageshow', function (event) {
-              if (event.persisted) {
-                  window.location.reload();
-              }
-          });
-      </script>
+<script>
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    });
+</script>
 
 
-@*@{ 
-    if(String.IsNullOrEmpty(Context.Session.GetString("NombreUsuario")))
-    {
-        Context.Response.Redirect("/Home/Login");
-    }
-}*@
+@*@{
+        if(String.IsNullOrEmpty(Context.Session.GetString("NombreUsuario")))
+        {
+            Context.Response.Redirect("/Home/Login");
+        }
+    }*@

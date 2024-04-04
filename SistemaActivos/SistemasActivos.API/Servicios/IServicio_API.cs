@@ -1,11 +1,11 @@
 ﻿using SistemaActivos.Entities.Entities;
-using SistemasActivos.API.Model;
+using SistemaActivos.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemasActivos.API.Servicios
+namespace SistemaActivos.Common
 {
     public interface IServicio_API
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemasActivos.API.Model
+namespace SistemaActivos.Common.Model
 {
     public class DepartamentosViewmodel
     {
@@ -18,6 +18,6 @@ namespace SistemasActivos.API.Model
         public int? Depa_UsuarioModificacion { get; set; }
         public DateTime? Depa_FechaModificacion { get; set; }
 
-      
+
     }
 }

@@ -33,7 +33,7 @@ namespace GestionActivos.WebAPI
         }
 
         public async Task<ApiResult<B>> Get<A, B>(Action<ApiCallConfiguration<A>> action, string token = null)
-        {
+          {
             var config = new ApiCallConfiguration<A>();
             var result = new ApiResult<B>();
             try
