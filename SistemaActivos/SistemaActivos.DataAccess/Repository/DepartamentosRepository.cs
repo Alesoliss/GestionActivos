@@ -81,5 +81,19 @@ namespace SistemaActivos.DataAccess.Repository
             }
 
         }
+        public RequestStatus EliminarDepartamento(string id)
+        {
+            string sql = ScriptDataBase.deptoeliminar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("Depa_Codigo", id);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+
+            }
+        }
     }
 }

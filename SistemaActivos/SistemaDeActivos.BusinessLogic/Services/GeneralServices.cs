@@ -96,6 +96,28 @@ namespace SistemaDeActivos.BusinessLogic
                 return Enumerable.Empty<tbDepartamentos>();
             }
         }
+
+        public ServiceResult EliminarDepartamento(string id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _departamentosRepository.EliminarDepartamento(id);
+                if (lost.CodeStatus > 0)
+                {
+                    return result.Ok(lost);
+                }
+                else
+                {
+                    return result.Error(lost);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+
+            }
+        }
         #endregion
 
     }

@@ -74,5 +74,17 @@ namespace SistemasActivos.API.Controllers
             var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
             return Json(new { success = true, descripcion });
         }
+
+        [HttpPost("Eliminar")]
+        public IActionResult Delete (DepartamentosViewmodel item)
+        {
+            var modelo = item.Depa_Codigo;
+
+            var depa_codigo = modelo.ToString();
+            var list = _generalServices.EliminarDepartamento(depa_codigo);
+
+            return Ok(list);
+
+        }
     }
 }
