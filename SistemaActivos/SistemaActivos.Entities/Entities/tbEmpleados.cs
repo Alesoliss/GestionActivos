@@ -11,6 +11,7 @@ namespace SistemaActivos.Entities.Entities
         public tbEmpleados()
         {
             tbActivos = new HashSet<tbActivos>();
+            tbUsuario = new HashSet<tbUsuario>();
         }
 
         public int Empl_Id { get; set; }
@@ -28,6 +29,8 @@ namespace SistemaActivos.Entities.Entities
         public DateTime? Empl_FechaCreacion { get; set; }
         public int? Empl_UsuarioModificacion { get; set; }
         public DateTime? Empl_FechaModificacion { get; set; }
+        public bool? Empl_Estado { get; set; }
+        public int? Sucu_Id { get; set; }
 
         public virtual tbDepartamentos Depa_CodigoNavigation { get; set; }
         public virtual tbUsuario Empl_UsuarioCreacionNavigation { get; set; }
@@ -35,5 +38,6 @@ namespace SistemaActivos.Entities.Entities
         public virtual tbEstadosCiviles EstD { get; set; }
         public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
         public virtual ICollection<tbActivos> tbActivos { get; set; }
+        public virtual ICollection<tbUsuario> tbUsuario { get; set; }
     }
 }

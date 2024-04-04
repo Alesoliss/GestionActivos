@@ -14,6 +14,7 @@ namespace SistemaActivos.Entities.Entities
         public DateTime? Carg_FechaCreacion { get; set; }
         public int? Carg_UsuarioModificacion { get; set; }
         public DateTime? Carg_FechaModificacion { get; set; }
+        public bool? Carg_Estado { get; set; }
 
         public virtual tbUsuario Carg_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuario Carg_UsuarioModificacionNavigation { get; set; }

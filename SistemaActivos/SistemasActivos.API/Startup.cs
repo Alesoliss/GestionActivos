@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SistemaDeActivos.BusinessLogic;
+using SistemasActivos.API.Extensiones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace SistemasActivos.API
         {
             services.DataAccess(Configuration.GetConnectionString("SistemaActivosCon"));
             services.BusinessLogic();
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(x => x.AddProfile<MappingProfileExtensions>(), AppDomain.CurrentDomain.GetAssemblies());
             services.AddHttpContextAccessor();
 
             services.AddControllers();

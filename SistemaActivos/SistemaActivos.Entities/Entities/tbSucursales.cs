@@ -17,6 +17,7 @@ namespace SistemaActivos.Entities.Entities
         public DateTime Sucu_FechaCreacion { get; set; }
         public int? Sucu_UsuarioModificacion { get; set; }
         public DateTime? Sucu_FechaModificacion { get; set; }
+        public bool? Sucu_Estado { get; set; }
 
         public virtual tbDepartamentos Depa_CodigoNavigation { get; set; }
         public virtual tbMunicipios Muni_CodigoNavigation { get; set; }

@@ -7,6 +7,7 @@ using SistemaActivos.DataAccess;
 using SistemaDeActivos.BusinessLogic;
 using AutoMapper;
 using SistemaActivos.Entities.Entities;
+using SistemasActivos.API.Model;
 
 namespace SistemasActivos.API.Controllers
 {
@@ -31,19 +32,21 @@ namespace SistemasActivos.API.Controllers
             return Ok(listado);
         }
 
-        [HttpPost("Insertar")]
-        public IActionResult InsertarDepartamento(tbDepartamentos departamentoDto)
+
+        [HttpPost("Insert")]
+        public IActionResult Insert(DepartamentosViewmodel item)
         {
-            try
+            var model = _mapper.Map<tbDepartamentos>(item);
+            var modelo = new tbDepartamentos()
             {
-                var departamento = _mapper.Map<tbDepartamentos>(departamentoDto);
-                string mensaje = _generalServices.InsertarDepto(departamento);
-                return Ok(mensaje);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error del servidorr" + ex.Message);
-            }
+                Depa_Codigo = item.Depa_Codigo,
+                Depa_Descripcion = item.Depa_Descripcion,
+                Depa_UsuarioCreacion = item.Depa_UsuarioCreacion,
+                Depa_FechaCreacion = item.Depa_FechaCreacion
+
+            };
+            var list = _generalServices.InsertarDepto(modelo);
+            return Ok(list);
         }
 
 

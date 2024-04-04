@@ -8,8 +8,13 @@ namespace SistemaActivos.DataAccess.Repository
 {
     class ScriptDataBase
     {
-        #region
+        #region departamentos
         public static string deptoinsertar = "[Gnrl].[SP_Departamentos_Insertar]";
+
+        public static string deptoactualizar = "[Gnrl].[SP_Departamentos_Actulizar]";
+
+        public static string deptoeliminar = "[Gnrl].[SP_Departamentos_Eliminar]";
         #endregion
+
     }
 }

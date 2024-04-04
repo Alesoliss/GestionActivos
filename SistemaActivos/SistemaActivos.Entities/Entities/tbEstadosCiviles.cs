@@ -19,6 +19,7 @@ namespace SistemaActivos.Entities.Entities
         public DateTime EstD_FechaCracion { get; set; }
         public int? EstD_UsuarioModificacion { get; set; }
         public DateTime? EstD_FechaModificacion { get; set; }
+        public bool? EstD_Estado { get; set; }
 
         public virtual tbUsuario EstD_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuario EstD_UsuarioModificacionNavigation { get; set; }

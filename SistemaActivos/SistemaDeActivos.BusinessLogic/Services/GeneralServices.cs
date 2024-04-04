@@ -21,19 +21,8 @@ namespace SistemaDeActivos.BusinessLogic
 
         #region Departamento
 
-        public IEnumerable<tbDepartamentos> ListadoDepto(out string error)
-        {
-            try
-            {
-                error = string.Empty;
-                return _departamentosRepository.List();
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return Enumerable.Empty<tbDepartamentos>();
-            }
-        }
+ 
+
 
         public ServiceResult ListadoDepto1()
         {
@@ -50,27 +39,25 @@ namespace SistemaDeActivos.BusinessLogic
         }
 
 
-        public string InsertarDepto(tbDepartamentos item)
+        public ServiceResult InsertarDepto(tbDepartamentos item)
         {
-            string mensaje = "";
+            var result = new ServiceResult();
             try
             {
-                RequestStatus status = _departamentosRepository.Insert(item);
-                if (status.CodeStatus != 1)
+                var lost = _departamentosRepository.Insert(item);
+                if (lost.CodeStatus > 0)
                 {
-                    mensaje = "Error al insertar el departamento: " + status.MessageStatus;
+                    return result.Ok(lost);
                 }
                 else
                 {
-                    mensaje = "Departamento insertado con éxito";
+                    return result.Error(lost);
                 }
             }
             catch (Exception ex)
             {
-                mensaje = "Error: " + ex.Message;
+                return result.Error(ex.Message);
             }
-
-            return mensaje;
         }
         #endregion
 

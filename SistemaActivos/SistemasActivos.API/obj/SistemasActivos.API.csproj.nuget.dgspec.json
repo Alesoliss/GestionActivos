@@ -1,20 +1,82 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {}
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
-        "projectName": "SistemaActivos.DataAccess",
-        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj",
+        "projectName": "SistemaActivos.Common",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj",
+        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+        "projectName": "SistemaActivos.DataAccess",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +90,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
-                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
+              "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
+                "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj"
               }
             }
           }
@@ -76,17 +138,21 @@
         }
       }
     },
-    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
         "projectName": "SistemaActivos.Entities",
-        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
-        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\obj\\",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\SistemaActivos.Entities.csproj",
+        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,17 +196,21 @@
         }
       }
     },
-    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
         "projectName": "SistemaDeActivos.BusinessLogic",
-        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,8 +224,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
+              "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
               }
             }
           }
@@ -188,17 +258,21 @@
         }
       }
     },
-    "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {
+    "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
         "projectName": "SistemasActivos.API",
-        "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
-        "packagesPath": "C:\\Users\\LAB1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\obj\\",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\SistemasActivos.API.csproj",
+        "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemasActivos.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LAB1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -212,11 +286,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
+              "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj": {
+                "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.Common\\SistemaActivos.Common.csproj"
               },
-              "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\LAB1\\Desktop\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj"
+              "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaActivos.DataAccess\\SistemaActivos.DataAccess.csproj"
+              },
+              "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\aleso\\OneDrive\\Escritorio\\GestionActivos\\SistemaActivos\\SistemaDeActivos.BusinessLogic\\SistemaDeActivos.BusinessLogic.csproj"
               }
             }
           }

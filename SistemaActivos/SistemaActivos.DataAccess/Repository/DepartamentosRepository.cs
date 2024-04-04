@@ -25,21 +25,19 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Insert(tbDepartamentos item)
         {
+            string sql = ScriptDataBase.deptoinsertar;
+
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {
                 var parametro = new DynamicParameters();
-                parametro.Add("Depa_Codigo", item.Depa_Codigo);
-                parametro.Add("Depa_Descripcion", item.Depa_Descripcion);
-                parametro.Add("Depa_UsuarioCreacion", item.Depa_UsuarioCreacion);
-                parametro.Add("Depa_FechaCreacion", item.Depa_FechaCreacion);
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Depa_Descripcion", item.Depa_Descripcion);
+                parametro.Add("@Depa_UsuarioCreacion", item.Depa_UsuarioCreacion);
+                parametro.Add("@Depa_FechaCreacion", item.Depa_FechaCreacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
 
-                var result = db.Execute(
-                    "[Gnrl].[SP_Departamentos_Insertar]", parametro,
-                    commandType: CommandType.StoredProcedure
-                );
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
 
-                string mensaje = (result == 1) ? "Exito" : "Error";
-                return new RequestStatus { CodeStatus = result, MessageStatus = mensaje};
 
             }
         }
