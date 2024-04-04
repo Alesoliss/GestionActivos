@@ -53,5 +53,34 @@ namespace GestionActivos.Controllers
                 return View(item);
             }
         }
+        [HttpGet ("Departamentos/llenar/{Depa_Codigo}")]
+        public async Task<IActionResult> llenar(DepartamentosViewmodel item, string Depa_Codigo)
+        {
+            try
+            {
+                var list = await _departamentoServicios.LlenarDepartamento(item, Depa_Codigo);
+                return View(list.Data);
+            }
+            catch (Exception ex)
+            {
+                return View(item);
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(DepartamentosViewmodel item)
+        {
+            try
+            {
+                item.Depa_UsuarioModificacion = 1;
+                item.Depa_FechaModificacion = DateTime.Now;
+                var list = await _departamentoServicios.ActualizarDepartamento(item);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(item);
+            }
+        }
+
     }
 }

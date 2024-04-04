@@ -1,0 +1,52 @@
+﻿@model SistemasActivos.API.Model.DepartamentosViewmodel
+
+<h4>Actualizar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Update" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="text" asp-for="Depa_Codigo" id="Depa_Codigo" />
+                
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label asp-for="Depa_Descripcion" class="control-label"></label>
+                    <input asp-for="Depa_Descripcion" class="form-control" id="txtDescripcion"/>
+                    <span asp-validation-for="Depa_Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index">Cancelar</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    function LLenarCollapse(id) {
+        var Depa_Codigo = "";
+        Depa_Codigo = id;
+        console.log("si entra " + Depa_Codigo);
+        $.ajax({
+            url: "Departamentos/llenar/" + Depa_Codigo,
+            method: "GET",
+            dataType: "json",
+            data: JSON.stringify({ Depa_Codigo: Depa_Codigo }),
+
+            success: function (data) {
+
+                console.log("DATA: NO");
+                console.log("value: " + data.descripcion);
+                $("#Depa_Codigo").val(Depa_Codigo);
+                $("#txtDescripcion").val(data.descripcion);
+            }
+        })
+    }
+</script>

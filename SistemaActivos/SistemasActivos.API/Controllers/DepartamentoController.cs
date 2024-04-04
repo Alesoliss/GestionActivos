@@ -8,6 +8,7 @@ using SistemaDeActivos.BusinessLogic;
 using AutoMapper;
 using SistemaActivos.Entities.Entities;
 using SistemaActivos.Common.Model;
+using Microsoft.AspNetCore.Http;
 
 namespace SistemasActivos.API.Controllers
 {
@@ -28,13 +29,14 @@ namespace SistemasActivos.API.Controllers
 
         public IActionResult Index()
         {
+
             var listado = _generalServices.ListadoDepto1();
 
             return Ok(listado);
         }
 
 
-        [HttpPost("Insert")]
+        [HttpPost("Create")]
         public IActionResult Insert(DepartamentosViewmodel item)
         {
             var model = _mapper.Map<tbDepartamentos>(item);
@@ -42,8 +44,8 @@ namespace SistemasActivos.API.Controllers
             {
                 Depa_Codigo = item.Depa_Codigo,
                 Depa_Descripcion = item.Depa_Descripcion,
-                Depa_UsuarioCreacion = item.Depa_UsuarioCreacion,
-                Depa_FechaCreacion = item.Depa_FechaCreacion
+                Depa_UsuarioCreacion = 1,
+                Depa_FechaCreacion = DateTime.Now
 
             };
             var list = _generalServices.InsertarDepto(modelo);
@@ -53,25 +55,26 @@ namespace SistemasActivos.API.Controllers
         [HttpPut("Actualizar")]
         public IActionResult Update (DepartamentosViewmodel item)
         {
+           
             var model = _mapper.Map<tbDepartamentos>(item);
             var modelo = new tbDepartamentos()
             {
-                Depa_Codigo = item.Depa_Codigo,
+                Depa_Codigo = HttpContext.Session.GetString("Depa_Id"),
                 Depa_Descripcion = item.Depa_Descripcion,
-                Depa_UsuarioModificacion = item.Depa_UsuarioModificacion,
-                Depa_FechaModificacion = item.Depa_FechaModificacion
+                Depa_UsuarioModificacion = 1,
+                Depa_FechaModificacion = DateTime.Now
 
             };
             var list = _generalServices.ActualizarDepto(modelo);
             return Ok(list);
         }
 
-        [HttpGet("Departamento/LlenarDepartamentos/{Depa_Codigo}")]
+        [HttpGet("LlenarDepartamentos/{Depa_Codigo}")]
         public IActionResult LlenarDeptos(string Depa_Codigo)
         {
             string error;
             var llenar = _generalServices.BuscarDepto(Depa_Codigo).ToList();
-            //HttpContext.Session("id", Carg_Id);
+            HttpContext.Session.SetString("Depa_id", Depa_Codigo);
             var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
             return Json(new { success = true, descripcion });
         }

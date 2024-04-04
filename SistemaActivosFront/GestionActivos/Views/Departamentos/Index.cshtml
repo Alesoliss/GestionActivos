@@ -7,9 +7,23 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @*<a asp-action="Create">Nuevo</a>*@
+    <a asp-action="Create" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseCrear" aria-expanded="false" aria-controls="collapseExample">Nuevo</a>
+
 </p>
-<table class="table">
+<div class="collapse" id="CollapseCrear">
+    <div class="card card-body">
+        @Html.Partial("_Create", new SistemasActivos.API.Model.DepartamentosViewmodel())
+    </div>
+</div>
+
+<div class="collapse" id="CollapseActualizar">
+    <div class="card card-body">
+        @Html.Partial("_Update", new SistemasActivos.API.Model.DepartamentosViewmodel())
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" id="example">
     <thead>
         <tr>
             <th>
@@ -33,7 +47,9 @@
             </td>
          
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="mdi mdi-pencil btn btn-primary mr-2"></i></a>
+
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
