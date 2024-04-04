@@ -19,6 +19,7 @@ namespace SistemaActivos.Entities.Entities
         public DateTime? Cate_FechaCreacion { get; set; }
         public int? Cate_UsuarioModificacion { get; set; }
         public DateTime? Cate_FechaModificacion { get; set; }
+        public bool? Cate_Estado { get; set; }
 
         public virtual tbUsuario Cate_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuario Cate_UsuarioModificacionNavigation { get; set; }

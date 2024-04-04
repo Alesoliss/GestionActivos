@@ -45,7 +45,11 @@ namespace SistemaActivos.Entities.Entities
         public DateTime? Usua_FechaModificacion { get; set; }
         public int? Usua_UsuarionCreacion { get; set; }
         public int? Usua_UsuarionModificacion { get; set; }
+        public int? Empl_Id { get; set; }
+        public int? Role_Id { get; set; }
 
+        public virtual tbEmpleados Empl { get; set; }
+        public virtual tbRoles Role { get; set; }
         public virtual tbUsuario Usua_UsuarionCreacionNavigation { get; set; }
         public virtual tbUsuario Usua_UsuarionModificacionNavigation { get; set; }
         public virtual ICollection<tbUsuario> InverseUsua_UsuarionCreacionNavigation { get; set; }

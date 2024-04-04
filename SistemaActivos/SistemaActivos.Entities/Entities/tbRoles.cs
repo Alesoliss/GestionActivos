@@ -11,6 +11,7 @@ namespace SistemaActivos.Entities.Entities
         public tbRoles()
         {
             tbPantallasPorRoles = new HashSet<tbPantallasPorRoles>();
+            tbUsuario = new HashSet<tbUsuario>();
         }
 
         public int Role_Id { get; set; }
@@ -24,5 +25,6 @@ namespace SistemaActivos.Entities.Entities
         public virtual tbUsuario Role_UsuarioModificacionNavigation { get; set; }
         public virtual tbUsuario Role_UsuarionCreacionNavigation { get; set; }
         public virtual ICollection<tbPantallasPorRoles> tbPantallasPorRoles { get; set; }
+        public virtual ICollection<tbUsuario> tbUsuario { get; set; }
     }
 }
