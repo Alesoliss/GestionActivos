@@ -55,7 +55,31 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbDepartamentos item)
         {
-            throw new NotImplementedException();
+            string sql = ScriptDataBase.deptoactualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Depa_Descripcion", item.Depa_Descripcion);
+                parametro.Add("@Depa_UsuarioModificacion", item.Depa_UsuarioModificacion);
+                parametro.Add("@Depa_FechaModificacion", item.Depa_FechaModificacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
+            //throw new NotImplementedException();
+        }
+        public IEnumerable<tbDepartamentos> FindDepto(string codigo)
+        {
+            string sql = "[Gnrl].[SP_Departamentos_Buscar]" + codigo;
+            List<tbDepartamentos> result = new List<tbDepartamentos>();
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                result = db.Query<tbDepartamentos>(sql, commandType: System.Data.CommandType.Text).ToList();
+                return result;
+            }
+
         }
     }
 }

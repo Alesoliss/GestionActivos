@@ -14,6 +14,8 @@ namespace SistemaActivos.DataAccess.Repository
         public static string deptoactualizar = "[Gnrl].[SP_Departamentos_Actulizar]";
 
         public static string deptoeliminar = "[Gnrl].[SP_Departamentos_Eliminar]";
+
+        public string deptobuscar = "[Gnrl].[SP_Departamentos_Buscar]";
         #endregion
 
     }

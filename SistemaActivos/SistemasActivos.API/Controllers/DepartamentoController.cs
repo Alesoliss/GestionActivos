@@ -49,6 +49,30 @@ namespace SistemasActivos.API.Controllers
             return Ok(list);
         }
 
+        [HttpPost("Actualizar")]
+        public IActionResult Update (DepartamentosViewmodel item)
+        {
+            var model = _mapper.Map<tbDepartamentos>(item);
+            var modelo = new tbDepartamentos()
+            {
+                Depa_Codigo = item.Depa_Codigo,
+                Depa_Descripcion = item.Depa_Descripcion,
+                Depa_UsuarioModificacion = item.Depa_UsuarioModificacion,
+                Depa_FechaModificacion = item.Depa_FechaModificacion
 
+            };
+            var list = _generalServices.ActualizarDepto(modelo);
+            return Ok(list);
+        }
+
+        [HttpPost("Departamento/LlenarDepartamentos/{Depa_Codigo}")]
+        public IActionResult LlenarDeptos(string Depa_Codigo)
+        {
+            string error;
+            var llenar = _generalServices.BuscarDepto(Depa_Codigo).ToList();
+            //HttpContext.Session("id", Carg_Id);
+            var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
+            return Json(new { success = true, descripcion });
+        }
     }
 }
