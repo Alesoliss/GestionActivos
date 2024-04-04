@@ -49,7 +49,7 @@ namespace SistemasActivos.API.Controllers
             return Ok(list);
         }
 
-        [HttpPost("Actualizar")]
+        [HttpPut("Actualizar")]
         public IActionResult Update (DepartamentosViewmodel item)
         {
             var model = _mapper.Map<tbDepartamentos>(item);
@@ -65,7 +65,7 @@ namespace SistemasActivos.API.Controllers
             return Ok(list);
         }
 
-        [HttpPost("Departamento/LlenarDepartamentos/{Depa_Codigo}")]
+        [HttpGet("Departamento/LlenarDepartamentos/{Depa_Codigo}")]
         public IActionResult LlenarDeptos(string Depa_Codigo)
         {
             string error;
@@ -75,7 +75,7 @@ namespace SistemasActivos.API.Controllers
             return Json(new { success = true, descripcion });
         }
 
-        [HttpPost("Eliminar")]
+        [HttpDelete("Eliminar")]
         public IActionResult Delete (DepartamentosViewmodel item)
         {
             var modelo = item.Depa_Codigo;
