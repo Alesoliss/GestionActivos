@@ -18,7 +18,6 @@
 </div>
 
 <div class="collapse" id="CollapseActualizar">
-     
     <div class="card card-body">
         @Html.Partial("_Update", new SistemasActivos.API.Model.DepartamentosViewmodel())
     </div>
@@ -53,8 +52,8 @@
 
                 @*<a href="@Url.Action("Details", "Departamento", new { Depa_Codigo = item.Depa_Codigo })" class="btn btn-info btn-sm">Detalles <i class="tim-icons icon-zoom-split"></i></a>*@
                 <a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>
-                <a href ="@Url.Action("Details", "Departamentos", new {Depa_Codigo = item.Depa_Codigo})" class="btn-info">deta</a>
-                @*<button class="btn btn-outline-warning btn-sm detalle-depa" data-depa-id="@item.Depa_Codigo" asp-route-id="@item.Depa_Codigo"><i class="fas fa-edit"></i>Detalle</button>*@
+
+                <button class="btn btn-outline-warning btn-sm detalle-depa" data-depa-id="@item.Depa_Codigo" asp-route-id="@item.Depa_Codigo"><i class="fas fa-edit"></i>Detalle</button>
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
                 <a asp-action="Eliminar" asp-route-id="@item.Depa_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Depa_Codigo')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
                 @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
@@ -114,38 +113,38 @@
         });
     }
 
-    //$(".detalle-depa").click(function () {
-    //console.log("entra?");
-    //var id = $(this).data("depa-id");
-    //    var url = "https://localhost:44311/API/Departamento/Detalles/" + id;
-    //fetch(url).then(function (result) {
-    //    if (result.ok) {
-    //        console.log("entra?");
-    //        return result.json();
-    //    }
-    //    else {
-    //        console.log("No entra");
-    //    }
-    //}).then(function (data) {
-    //    console.log("data = " + data);
-    //    var descripcion = data.descripcion;
+    $(".detalle-depa").click(function () {
+    console.log("entra?");
+    var id = $(this).data("depa-id");
+        var url = "https://localhost:44311/API/Departamento/Detalles/" + id;
+    fetch(url).then(function (result) {
+        if (result.ok) {
+            console.log("entra?");
+            return result.json();
+        }
+        else {
+            console.log("No entra");
+        }
+    }).then(function (data) {
+        console.log("data = " + data);
+        var descripcion = data.descripcion;
 
-    //    console.log("Id=" + id);
-    //    console.log("des=" + data.descripcion);
-    //    console.log("uc=" + data.usuacrea);
-    //    console.log("um=" + data.usuamodi);
-    //    console.log("fc=" + data.fechacrea);
-    //    console.log("fm=" + data.fechamodi);
+        console.log("Id=" + id);
+        console.log("des=" + data.descripcion);
+        console.log("uc=" + data.usuacrea);
+        console.log("um=" + data.usuamodi);
+        console.log("fc=" + data.fechacrea);
+        console.log("fm=" + data.fechamodi);
 
-    //    $("#Depa_Cod").val(id);
-    //    $("#txtDescripcion").val(descripcion);
-    //    $("#txtUsuacrea").val(data.usuacrea);
-    //    $("#txtfechacrea").val(data.fechacrea);
-    //    $("#txtUsuaModi").val(data.usuamodi);
-    //    $("#fechamodi").val(data.fechamodi);
+        $("#Depa_Cod").val(id);
+        $("#txtDescripcion").val(descripcion);
+        $("#txtUsuacrea").val(data.usuacrea);
+        $("#txtfechacrea").val(data.fechacrea);
+        $("#txtUsuaModi").val(data.usuamodi);
+        $("#fechamodi").val(data.fechamodi);
 
-    //});
-    //})
+    });
+    })
 
     function ObtenerDelete(id) {
         $("#Depa_Codi").val(id);

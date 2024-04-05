@@ -97,27 +97,17 @@ namespace GestionActivos.Controllers
             }
         }
 
-        //GET: DepartamentosController/Details
-        public async Task<IActionResult> Details(string Depa_Codigo, DepartamentosViewmodel item)
+        [HttpGet("Detalles")]
+        public async Task<IActionResult> Details(string Depa_Codigo)
         {
-            var list = await _departamentoServicios.DetallesDepartamento(Depa_Codigo);
-            if (list.Success)
+            try 
             {
-                try
-                {
-                    
-                    var data = list.Data;
-                    
-                    return View(data);
-                }
-                catch (Exception ex)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
+                var list = await _departamentoServicios.DetallesDepartamento(Depa_Codigo);
+                return View(list.Data);
             }
-            else
+            catch (Exception ex)
             {
-                return View("Error");
+                return RedirectToAction("Index", "Home");
             }
         }
     }
