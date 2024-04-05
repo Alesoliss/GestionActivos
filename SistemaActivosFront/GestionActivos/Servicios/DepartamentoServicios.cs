@@ -119,14 +119,14 @@ namespace GestionActivos.Servicios
             }
         }
 
-        public async Task<ServiceResult> EliminarDepartamento(DepartamentosViewmodel item)
+        public async Task<ServiceResult> EliminarDepartamento(DepartamentosViewmodel item, string Depa_Codigo)
         {
             var result = new ServiceResult();
             try
             {
-                var response = await _api.Put<DepartamentosViewmodel, ServiceResult>(req =>
+                var response = await _api.Delete<DepartamentosViewmodel, ServiceResult>(req =>
                 {
-                    req.Path = $"/API/Departamento/Eliminar";
+                    req.Path = $"/API/Departamento/Eliminar/{Depa_Codigo}";
                     req.Content = item;
                 });
                 if (!response.Success)
@@ -144,5 +144,31 @@ namespace GestionActivos.Servicios
                 throw;
             }
         }
+
+        public async Task<ServiceResult> DetallesDepartamento(string Depa_Codigo)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Get<IEnumerable<DepartamentosViewmodel>, IEnumerable<DepartamentosViewmodel>>(req =>
+                {
+                    req.Path = $"​/API/Departamento/Detalles{Depa_Codigo}";
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
+
     }
 }

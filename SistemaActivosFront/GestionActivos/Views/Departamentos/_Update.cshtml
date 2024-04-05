@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <form asp-action="Update" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="text" asp-for="Depa_Codigo" id="Depa_Codigo" />
+            <input type="hidden" asp-for="Depa_Codigo" id="Depa_Cod" />
                 
             <div class="form-group">
                 <div class="col-md-6">
@@ -29,24 +29,43 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
-<script>
-    function LLenarCollapse(id) {
-        var Depa_Codigo = "";
-        Depa_Codigo = id;
-        console.log("si entra " + Depa_Codigo);
-        $.ajax({
-            url: "Departamentos/llenar/" + Depa_Codigo,
-            method: "GET",
-            dataType: "json",
-            data: JSON.stringify({ Depa_Codigo: Depa_Codigo }),
+@*<script>
 
-            success: function (data) {
-
-                console.log("DATA: NO");
-                console.log("value: " + data.descripcion);
-                $("#Depa_Codigo").val(Depa_Codigo);
-                $("#txtDescripcion").val(data.descripcion);
+    //function LLenarCollapse(id) {
+    $(".editar-carg").click(function () {
+        var id1 = $(this).data("carg-id");
+        var url = "https://localhost:44397API/Departamento/LlenarDepartamentos/" + id;
+        fetch(url).then(function (result) {
+            if (result.ok) {
+                return result.json();
             }
-        })
+        }).then(function (data) {
+
+            var depa = data[0];
+            var id = depa.carg_Id;
+            var descripcion = depa.carg_Descripcion;
+
+            $("#Depa_Codigo").val(id);
+            $("#txtDescripcion").val(descripcion);
+
+        });
+
+        //var Depa_Codigo = "";
+        //Depa_Codigo = id;
+        //console.log("si entra " + Depa_Codigo);
+        //$.ajax({
+        //    url: "Departamentos/llenar/" + Depa_Codigo,
+        //    method: "GET",
+        //    dataType: "json",
+        //    data: JSON.stringify({ Depa_Codigo: Depa_Codigo }),
+
+        //    success: function (data) {
+
+        //        console.log("DATA: NO");
+        //        console.log("value: " + data.descripcion);
+        //        $("#Depa_Codigo").val(Depa_Codigo);
+        //        $("#txtDescripcion").val(data.descripcion);
+        //    }
+        //})
     }
-</script>
+</script>*@

@@ -23,6 +23,17 @@ namespace SistemaActivos.DataAccess.Repository
             throw new NotImplementedException();
         }
 
+        public IEnumerable<tbDepartamentos> FindDetalle(string id)
+        {
+            string sql = $"[Gnrl].[SP_Departamentos_Detalle] '{id}'";
+            List<tbDepartamentos> result = new List<tbDepartamentos>();
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                result = db.Query<tbDepartamentos>(sql, commandType: System.Data.CommandType.Text).ToList();
+                return result;
+            }
+        }
+
         public RequestStatus Insert(tbDepartamentos item)
         {
             string sql = ScriptDataBase.deptoinsertar;
@@ -72,7 +83,7 @@ namespace SistemaActivos.DataAccess.Repository
         }
         public IEnumerable<tbDepartamentos> FindDepto(string codigo)
         {
-            string sql = "[Gnrl].[SP_Departamentos_Buscar]" + codigo;
+            string sql = $"[Gnrl].[SP_Departamentos_Buscar] '{codigo}'";
             List<tbDepartamentos> result = new List<tbDepartamentos>();
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {

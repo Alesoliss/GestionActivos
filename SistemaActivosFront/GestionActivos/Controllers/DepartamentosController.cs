@@ -82,5 +82,19 @@ namespace GestionActivos.Controllers
             }
         }
 
+       
+        [HttpPost]
+        public IActionResult Delete(DepartamentosViewmodel item, string Depa_Codigo)
+        {
+            try
+            {
+                var list = _departamentoServicios.EliminarDepartamento(item, Depa_Codigo);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(item);
+            }
+        }
     }
 }

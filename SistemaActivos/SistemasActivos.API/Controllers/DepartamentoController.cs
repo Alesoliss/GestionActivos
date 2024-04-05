@@ -75,19 +75,35 @@ namespace SistemasActivos.API.Controllers
             string error;
             var llenar = _generalServices.BuscarDepto(Depa_Codigo).ToList();
             //HttpContext.Session.SetString("Depa_id", Depa_Codigo);
+            var id = llenar.FirstOrDefault()?.Depa_Codigo;
             var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
-            return Json(new { success = true, descripcion });
+            return Json(new { success = true, id, descripcion });
         }
 
-        [HttpDelete("Eliminar")]
-        public IActionResult Delete (DepartamentosViewmodel item)
+        [HttpDelete("Eliminar/{Depa_Codigo}")]
+        public IActionResult Delete (string Depa_Codigo)
         {
-            var modelo = item.Depa_Codigo;
 
-            var depa_codigo = modelo.ToString();
-            var list = _generalServices.EliminarDepartamento(depa_codigo);
+            var list = _generalServices.EliminarDepartamento(Depa_Codigo);
 
             return Ok(list);
+
+        }
+
+        [HttpGet("Detalles/{Depa_Codigo}")]
+        public IActionResult Details(string Depa_Codigo, DepartamentosViewmodel item)
+        {
+            var listado = _generalServices.DetallesDepto(Depa_Codigo);
+            var tabla = listado.FirstOrDefault();
+            item.Depa_Codigo = tabla.Depa_Codigo;
+            item.Depa_Descripcion = tabla.Depa_Descripcion;
+            item.Uuno = tabla.Uuno;
+            item.Depa_FechaCreacion = tabla.Depa_FechaCreacion;
+            item.Udos = tabla.Udos;
+            item.Depa_FechaModificacion = tabla.Depa_FechaModificacion;
+
+            
+            return Ok(item);
 
         }
     }
