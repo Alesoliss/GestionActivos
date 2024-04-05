@@ -90,11 +90,17 @@ namespace SistemasActivos.API.Controllers
 
         }
 
-        [HttpGet("Detalles")]
+        [HttpGet("Detalles/{Depa_Codigo}")]
         public IActionResult Details(string Depa_Codigo)
         {
-                var list =  _generalServices.DetallesDepto(Depa_Codigo);
-                return Ok(list);            
+            var llenar =  _generalServices.BuscarDepto(Depa_Codigo);
+            var id = llenar.FirstOrDefault()?.Depa_Codigo;
+            var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
+            var fechacrea = llenar.FirstOrDefault()?.Depa_FechaCreacion;
+            var fechamodi = llenar.FirstOrDefault()?.Depa_FechaModificacion;
+            var usuacrea = llenar.FirstOrDefault()?.Uuno;
+            var usuamodi = llenar.FirstOrDefault()?.Udos;
+            return Json(new { success = true, id, descripcion, usuacrea, fechacrea, usuamodi, fechamodi });
         }
     }
 }

@@ -152,7 +152,7 @@ namespace GestionActivos.Servicios
             {
                 var response = await _api.Get<IEnumerable<DepartamentosViewmodel>, IEnumerable<DepartamentosViewmodel>>(req =>
                 {
-                    req.Path = $"​/API/Departamento/Detalles{Depa_Codigo}";
+                    req.Path = $"​API/Departamento/Detalles​/{Depa_Codigo}";
                 });
                 if (!response.Success)
                 {

@@ -97,7 +97,7 @@ namespace GestionActivos.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet("Detalles")]
         public async Task<IActionResult> Details(string Depa_Codigo)
         {
             try 
