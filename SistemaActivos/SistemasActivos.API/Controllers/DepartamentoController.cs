@@ -90,21 +90,11 @@ namespace SistemasActivos.API.Controllers
 
         }
 
-        [HttpGet("Detalles/{Depa_Codigo}")]
-        public IActionResult Details(string Depa_Codigo, DepartamentosViewmodel item)
+        [HttpGet("Detalles")]
+        public IActionResult Details(string Depa_Codigo)
         {
-            var listado = _generalServices.DetallesDepto(Depa_Codigo);
-            var tabla = listado.FirstOrDefault();
-            item.Depa_Codigo = tabla.Depa_Codigo;
-            item.Depa_Descripcion = tabla.Depa_Descripcion;
-            item.Uuno = tabla.Uuno;
-            item.Depa_FechaCreacion = tabla.Depa_FechaCreacion;
-            item.Udos = tabla.Udos;
-            item.Depa_FechaModificacion = tabla.Depa_FechaModificacion;
-
-            
-            return Ok(item);
-
+                var list =  _generalServices.DetallesDepto(Depa_Codigo);
+                return Ok(list);            
         }
     }
 }

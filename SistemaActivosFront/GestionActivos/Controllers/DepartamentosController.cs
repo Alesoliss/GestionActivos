@@ -96,5 +96,19 @@ namespace GestionActivos.Controllers
                 return View(item);
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Details(string Depa_Codigo)
+        {
+            try 
+            {
+                var list = await _departamentoServicios.DetallesDepartamento(Depa_Codigo);
+                return View(list.Data);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
     }
 }

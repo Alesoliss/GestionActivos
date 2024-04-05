@@ -59,6 +59,37 @@ namespace GestionActivos.WebAPI
             return result;
         }
 
+        public async Task<ApiResult<List<B>>> Details<A, B>(Action<ApiCallConfiguration<A>> action, string token = null)
+        {
+            var config = new ApiCallConfiguration<A>();
+            var result = new ApiResult<List<B>>();
+            try
+            {
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                action(config);
+                var requestUrl = new Uri(_client.BaseAddress, config.PathWithQueryStrings);
+
+                // Especificar el tipo de medio esperado
+                _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = await _client.GetAsync(requestUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                result = JsonConvert.DeserializeObject<ApiResult<List<B>>>(content);
+                if (result != null)
+                {
+                    result.Path = config.Path;
+                    result.StatusCode = response.StatusCode;
+                    result.Type = ApiResultType.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = Helpers.GetMessage(ex);
+            }
+            return result;
+        }
+
         public async Task<ApiResult<B>> Post<A, B>(Action<ApiCallConfiguration<A>> action, string token = null)
         {
             var config = new ApiCallConfiguration<A>();

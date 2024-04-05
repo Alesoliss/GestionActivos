@@ -26,7 +26,9 @@ namespace SistemaActivos.DataAccess.Repository
         public IEnumerable<tbDepartamentos> FindDetalle(string id)
         {
             string sql = $"[Gnrl].[SP_Departamentos_Detalle] '{id}'";
+
             List<tbDepartamentos> result = new List<tbDepartamentos>();
+            
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {
                 result = db.Query<tbDepartamentos>(sql, commandType: System.Data.CommandType.Text).ToList();
