@@ -97,6 +97,21 @@ namespace SistemaDeActivos.BusinessLogic
             }
         }
 
+        public ServiceResult BuscarDepto1(string codigo)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _departamentosRepository.FindDepto(codigo);
+                return result.Ok(list);
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex);
+
+            }
+        }
         public ServiceResult EliminarDepartamento(string id)
         {
             var result = new ServiceResult();

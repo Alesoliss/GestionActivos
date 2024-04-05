@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace SistemasActivos.API.Model
 
         public DateTime? Depa_FechaModificacion { get; set; }
 
-
+        [Display(Name = "Usuario Creacion")]
+        [NotMapped]
+        public string Uuno { get; set; }
+        [Display(Name = "Usuario Modificacion")]
+        [NotMapped]
+        public string Udos { get; set; }
     }
 }
