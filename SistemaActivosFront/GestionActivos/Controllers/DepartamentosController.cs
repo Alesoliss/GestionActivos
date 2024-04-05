@@ -58,7 +58,7 @@ namespace GestionActivos.Controllers
         {
             try
             {
-                var list = await _departamentoServicios.LlenarDepartamento(item, Depa_Codigo);
+                var list = await _departamentoServicios.LlenarDepartamento(Depa_Codigo);
                 return View(list.Data);
             }
             catch (Exception ex)

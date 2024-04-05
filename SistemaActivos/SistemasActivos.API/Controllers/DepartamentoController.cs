@@ -59,7 +59,7 @@ namespace SistemasActivos.API.Controllers
             var model = _mapper.Map<tbDepartamentos>(item);
             var modelo = new tbDepartamentos()
             {
-                Depa_Codigo = HttpContext.Session.GetString("Depa_Id"),
+                Depa_Codigo = item.Depa_Codigo,
                 Depa_Descripcion = item.Depa_Descripcion,
                 Depa_UsuarioModificacion = 1,
                 Depa_FechaModificacion = DateTime.Now
@@ -74,7 +74,7 @@ namespace SistemasActivos.API.Controllers
         {
             string error;
             var llenar = _generalServices.BuscarDepto(Depa_Codigo).ToList();
-            HttpContext.Session.SetString("Depa_id", Depa_Codigo);
+            //HttpContext.Session.SetString("Depa_id", Depa_Codigo);
             var descripcion = llenar.FirstOrDefault()?.Depa_Descripcion;
             return Json(new { success = true, descripcion });
         }

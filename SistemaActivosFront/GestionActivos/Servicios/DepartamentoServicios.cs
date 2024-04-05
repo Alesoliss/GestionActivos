@@ -67,5 +67,82 @@ namespace GestionActivos.Servicios
                 throw;
             }
         }
+
+        public async Task<ServiceResult> LlenarDepartamento(string Depa_Codigo)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Get<IEnumerable<DepartamentosViewmodel>, IEnumerable<DepartamentosViewmodel>>(req =>
+                {
+                    req.Path = $"/API/Departamento/LlenarDepartamentos/{Depa_Codigo}";
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
+
+        public async Task<ServiceResult> ActualizarDepartamento(DepartamentosViewmodel item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Put<DepartamentosViewmodel, ServiceResult>(req =>
+                {
+                    req.Path = $"/API/Departamento/Actualizar";
+                    req.Content = item;
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
+
+        public async Task<ServiceResult> EliminarDepartamento(DepartamentosViewmodel item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Put<DepartamentosViewmodel, ServiceResult>(req =>
+                {
+                    req.Path = $"/API/Departamento/Eliminar";
+                    req.Content = item;
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
     }
 }
