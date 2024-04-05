@@ -272,3 +272,8 @@ C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\bin\Debu
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Departamentos\Index.cshtml.g.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Departamentos\Details.cshtml.g.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Departamentos\_Create.cshtml.g.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Departamentos\_Delete.cshtml.g.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Departamentos\_Update.cshtml.g.cs
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivosFront\GestionActivos\obj\Debug\net5.0\Razor\Views\Empleados\PrincipalCalculo.cshtml.g.cs

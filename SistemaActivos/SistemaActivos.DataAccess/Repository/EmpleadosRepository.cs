@@ -28,6 +28,35 @@ namespace SistemaActivos.DataAccess.Repository
         }
 
 
+        public IEnumerable<EmpleadosViewmodel> ListarCalcular(int id, DateTime f1, DateTime f2)
+        {
+            string sql = ScriptDataBase.calculoPrincipal;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("ClienteId", id);
+                parametro.Add("FechaInicio", f1);
+                parametro.Add("FechaFinal", f2);
+
+                var result = db.Query<EmpleadosViewmodel>(sql, parametro, commandType: CommandType.StoredProcedure);
+                return result;
+            }
+        }
+
+
+
+        public IEnumerable<tbEmpleados> List()
+        {
+            const string sql = "[Acti].[SP_Activos_Empleados_CalculoTabla]";
+            List<tbEmpleados> result = new List<tbEmpleados>();
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                result = db.Query<tbEmpleados>(sql, commandType: System.Data.CommandType.Text).ToList();
+                return result;
+            }
+        }
+
         public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
@@ -43,14 +72,22 @@ namespace SistemaActivos.DataAccess.Repository
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbEmpleados> List()
-        {
-            throw new NotImplementedException();
-        }
+  
 
         public RequestStatus Update(tbEmpleados item)
         {
             throw new NotImplementedException();
+        }
+
+
+        public async Task<IEnumerable<tbEmpleados>> ObtenerTodos()
+        {
+            using (var connection = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                await connection.OpenAsync();
+                var result = await connection.QueryAsync<tbEmpleados>("Gnrl.SP_Empleados_DropDownList", commandType: CommandType.StoredProcedure);
+                return result;
+            }
         }
     }
 }

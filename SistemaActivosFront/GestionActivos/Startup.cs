@@ -32,6 +32,8 @@ namespace GestionActivos
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddControllersWithViews();
             services.AddScoped<DepartamentoServicios>();
+            services.AddScoped<EmpleadoServicio>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

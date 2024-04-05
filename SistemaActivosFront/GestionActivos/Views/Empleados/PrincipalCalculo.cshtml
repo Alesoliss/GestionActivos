@@ -1,0 +1,248 @@
+﻿@model GestionActivos.Models.EmpleadosViewmodel
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Calculo Listado de Empleados</h1>
+
+        <form asp-action="CalculoListado" class="mb-4">
+            <div class="form-group">
+                <label for="empleadoId">Selecciona un empleado:</label>
+
+                <select id="empleadoId" name="empleadoId" class="form-control">
+                    <option value="">Selecciona un empleado</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="fechaFinal">Fecha final:</label>
+                <input type="date" id="fechaFinal" name="fechaFinal" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Exportar</button>
+        </form>
+
+
+        <table class="table table-bordered table-striped" id="tabla">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Activo</th>
+                    <th>Costo Original</th>
+                    <th>Costo Depreciable</th>
+                    <th>Tasa Anual</th>
+                    <th>Precio en Libros</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Computadoras</td>
+                    <td>laptop Tay</td>
+                    <td>785000.00</td>
+                    <td>777150.0000</td>
+                    <td>10.0</td>
+                    <td>163280.000000000000000</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+
+
+    <script>
+        async function obtenerListaEmpleados() {
+            try {
+                const response = await fetch('https://localhost:44311/API/Empleados/listaEmpleados');
+                if (!response.ok) {
+                    throw new Error('Error al obtener la lista de empleados');
+                }
+                const data = await response.json();
+
+                if (!Array.isArray(data)) {
+                    throw new Error('La respuesta no es un array de objetos');
+                }
+
+
+
+                $.each(data, function (key, empleado) {
+                    $("#empleadoId").append("<option value= " + empleado.empl_Id + ">" + empleado.nombre + "</option>");
+                })
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        obtenerListaEmpleados();</script>
+
+
+
+    <script>
+        async function obtenerListaActivos() {
+            try {
+                const response = await fetch('https://localhost:44311/API/Empleados/Listado');
+                console.log(response);
+                if (!response.ok) {
+                    throw new Error('Error al obtener la lista de activos');
+                    console.log('Error al obtener la lista de activos')
+
+                }
+                console.log(data);
+                const data = await response.json();
+
+                if (!Array.isArray(data)) {
+                    throw new Error('La respuesta no es un array de activos');
+                }
+
+                $.each(data, function (key, activo) {
+                    $("#tabla").append(" <tr> < td>" + activo.acti_Descripcion + "</td>" + "<td>" + activo.cate_Descripcion + "</td>" + "  </tr >");
+                    console.log('aquiiiiiiii' + activo.acti_Descripcion)
+
+                })
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        obtenerListaActivos();</script>
+
+
+
+
+    @*<script>
+        async function obtenerListaActivos() {
+            try {
+                const response = await fetch('https://localhost:44311/API/Empleados/Listado');
+
+                console.log(response)
+
+                if (!response.ok) {
+                    console.log('Error al obtener la lista de activos');
+                }
+
+                const data = await response.json();
+                if (!Array.isArray(data)) {
+                    throw new Error('La respuesta no es un array de activos');
+                }
+
+                data.forEach(activo => {
+                    $("#tabla tbody").append(<tr><td>${activo.acti_Descripcion}</td><td>${activo.cate_Descripcion}</td></tr>);
+                    console.log('Descripción del activo:', activo.acti_Descripcion);
+                });
+            }
+            catch (error) {
+                console.error(error);
+            }
+        }
+        obtenerListaActivos();
+    </script>*@
+
+
+    @*$("#tabla").append(" <tr> < th>" + activo.Acti_Descripcion + "</th>" + "<th>" + activo.Cate_Descripcion + "</th>" + "  </tr>");*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+    <script>
+        async function obtenerCalculoListado() {
+            try {
+                const empleadoId = document.getElementById('empleadoId').value;
+                const fechaInicio = document.getElementById('fechaInicio').value;
+                const fechaFinal = document.getElementById('fechaFinal').value;
+
+                const response = await fetch(/Empleados/CalculoListado ? empleadoId = ${ empleadoId } & fechaInicio=${ fechaInicio } & fechaFinal=${ fechaFinal });
+                if (!response.ok) {
+                    throw new Error('Errorrrrr');
+                }
+                const data = await response.json();
+
+                // exceeeeeel
+                generarArchivoExcel(data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        function generarArchivoExcel(data) {
+            const wb = XLSX.utils.book_new();
+
+            // conversion de datosssss
+            const ws = XLSX.utils.json_to_sheet(data);
+
+            // agregar hojaa
+            XLSX.utils.book_append_sheet(wb, ws, 'Empleados');
+
+            // archivo en si excel
+            const wbout = XLSX.write(wb, { type: 'binary', bookType: 'xlsx' });
+
+
+            const blob = new Blob([s2ab(wbout)], { type: 'application/octet-stream' });
+
+            // enlaceeeee
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'listado_empleados.xlsx';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Array Bufferrrr
+        function s2ab(s) {
+            const buf = new ArrayBuffer(s.length);
+            const view = new Uint8Array(buf);
+            for (let i = 0; i !== s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+            return buf;
+        }
+        //cambiar  //cambiar  //cambiar  //cambiar
+        //cambiar al subirrrr
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            obtenerCalculoListado();
+        });</script>
+
+
+
+
+
+
+
+
+
+</body>

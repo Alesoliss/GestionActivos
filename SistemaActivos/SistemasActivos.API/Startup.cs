@@ -28,7 +28,6 @@ namespace SistemasActivos.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
             services.DataAccess(Configuration.GetConnectionString("SistemaActivosCon"));
             services.BusinessLogic();
             services.AddAutoMapper(x => x.AddProfile<MappingProfileExtensions>(), AppDomain.CurrentDomain.GetAssemblies());
@@ -39,23 +38,33 @@ namespace SistemasActivos.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SistemasActivos.API", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                  builder =>
+                  {
+                      builder.WithOrigins("https://localhost:44346")
+                             .AllowAnyHeader()
+                             .AllowAnyMethod()
+                             .AllowAnyOrigin();
+                  });
+            });
+
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(options =>
-            {
-                options.WithOrigins("https://localhost:44346");
-                options.AllowAnyMethod();
-                options.AllowAnyHeader();
-            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SistemasActivos.API v1"));
             }
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
 
@@ -67,6 +76,8 @@ namespace SistemasActivos.API
             {
                 endpoints.MapControllers();
             });
+
+
         }
     }
 }
