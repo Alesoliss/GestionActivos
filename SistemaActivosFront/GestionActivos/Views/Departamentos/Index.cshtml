@@ -52,8 +52,8 @@
                 <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>
 
                 @*<a href="@Url.Action("Details", "Departamento", new { Depa_Codigo = item.Depa_Codigo })" class="btn btn-info btn-sm">Detalles <i class="tim-icons icon-zoom-split"></i></a>*@
-                <a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>
-                <a href ="@Url.Action("Details", "Departamentos", new {Depa_Codigo = item.Depa_Codigo})" class="btn-info">deta</a>
+                @*<a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>*@
+                <a href ="@Url.Action("Details", "Departamentos", new {Depa_Codigo = item.Depa_Codigo})" class="mdi mdi-eye btn btn-warning mr-2">detalle</a>
                 @*<button class="btn btn-outline-warning btn-sm detalle-depa" data-depa-id="@item.Depa_Codigo" asp-route-id="@item.Depa_Codigo"><i class="fas fa-edit"></i>Detalle</button>*@
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
                 <a asp-action="Eliminar" asp-route-id="@item.Depa_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Depa_Codigo')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
