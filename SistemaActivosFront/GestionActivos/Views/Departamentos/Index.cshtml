@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<table class="table table-bordered table-striped" id="example">
+<table class="table table-bordered table-striped" id="myTable">
     <thead>
         <tr>
             <th>
@@ -32,34 +32,35 @@
             <th>
                 @Html.DisplayNameFor(model => model.Depa_Descripcion)
             </th>
-           
+
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Depa_Codigo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Depa_Descripcion)
-            </td>
-         
-            <td>
-                @*<button data-depa-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample"><i class="mdi mdi-pencil btn btn-primary mr-2 editar-depa">Editar</i></button>*@
-                <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Depa_Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Depa_Descripcion)
+                </td>
 
-                @*<a href="@Url.Action("Details", "Departamento", new { Depa_Codigo = item.Depa_Codigo })" class="btn btn-info btn-sm">Detalles <i class="tim-icons icon-zoom-split"></i></a>*@
-                <a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>
+                <td>
+                    @*<button data-depa-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample"><i class="mdi mdi-pencil btn btn-primary mr-2 editar-depa">Editar</i></button>*@
+                    <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>
 
-                <button class="btn btn-outline-warning btn-sm detalle-depa" data-depa-id="@item.Depa_Codigo" asp-route-id="@item.Depa_Codigo"><i class="fas fa-edit"></i>Detalle</button>
-                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                <a asp-action="Eliminar" asp-route-id="@item.Depa_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Depa_Codigo')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
-                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-            </td>
-        </tr>
-}
+                    @*<a href="@Url.Action("Details", "Departamento", new { Depa_Codigo = item.Depa_Codigo })" class="btn btn-info btn-sm">Detalles <i class="tim-icons icon-zoom-split"></i></a>*@
+                    @*<a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>*@
+
+                    <button class="btn btn-outline-warning btn-sm detalle-depa" data-depa-id="@item.Depa_Codigo" asp-route-id="@item.Depa_Codigo"><i class="fas fa-edit"></i>Detalle</button>
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    <a asp-action="Eliminar" asp-route-id="@item.Depa_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Depa_Codigo')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
+                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
@@ -84,10 +85,23 @@
     </div>
 </div>
 
+
+<script>
+
+    var table = new DataTable('#myTable', {
+        language: {
+            url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
+        },
+    });
+</script>
+
+
+
+
 <script>
 
     function LLenarCollapse(id) {
-    //$(".editar-depa").click(function () {
+        //$(".editar-depa").click(function () {
         console.log("entra?");
         //var id = $(this).data("depa-id");
         var url = "https://localhost:44311/API/Departamento/LlenarDepartamentos/" + id;
@@ -101,7 +115,7 @@
                 console.log("No entra");
             }
         }).then(function (data) {
-            console.log("data = "+ data);
+            console.log("data = " + data);
             var descripcion = data.descripcion;
 
             console.log("Id=" + id);
@@ -114,36 +128,36 @@
     }
 
     $(".detalle-depa").click(function () {
-    console.log("entra?");
-    var id = $(this).data("depa-id");
+        console.log("entra?");
+        var id = $(this).data("depa-id");
         var url = "https://localhost:44311/API/Departamento/Detalles/" + id;
-    fetch(url).then(function (result) {
-        if (result.ok) {
-            console.log("entra?");
-            return result.json();
-        }
-        else {
-            console.log("No entra");
-        }
-    }).then(function (data) {
-        console.log("data = " + data);
-        var descripcion = data.descripcion;
+        fetch(url).then(function (result) {
+            if (result.ok) {
+                console.log("entra?");
+                return result.json();
+            }
+            else {
+                console.log("No entra");
+            }
+        }).then(function (data) {
+            console.log("data = " + data);
+            var descripcion = data.descripcion;
 
-        console.log("Id=" + id);
-        console.log("des=" + data.descripcion);
-        console.log("uc=" + data.usuacrea);
-        console.log("um=" + data.usuamodi);
-        console.log("fc=" + data.fechacrea);
-        console.log("fm=" + data.fechamodi);
+            console.log("Id=" + id);
+            console.log("des=" + data.descripcion);
+            console.log("uc=" + data.usuacrea);
+            console.log("um=" + data.usuamodi);
+            console.log("fc=" + data.fechacrea);
+            console.log("fm=" + data.fechamodi);
 
-        $("#Depa_Cod").val(id);
-        $("#txtDescripcion").val(descripcion);
-        $("#txtUsuacrea").val(data.usuacrea);
-        $("#txtfechacrea").val(data.fechacrea);
-        $("#txtUsuaModi").val(data.usuamodi);
-        $("#fechamodi").val(data.fechamodi);
+            $("#Depa_Cod").val(id);
+            $("#txtDescripcion").val(descripcion);
+            $("#txtUsuacrea").val(data.usuacrea);
+            $("#txtfechacrea").val(data.fechacrea);
+            $("#txtUsuaModi").val(data.usuamodi);
+            $("#fechamodi").val(data.fechamodi);
 
-    });
+        });
     })
 
     function ObtenerDelete(id) {

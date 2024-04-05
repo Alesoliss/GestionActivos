@@ -24,7 +24,7 @@
     <!-- Custom Theme Style -->
     <link href="~/build/css/custom.min.css" rel="stylesheet">
 
-    <script src="~/js/JqueryVS3_7_1.js"></script>
+    <link rel="stylesheet" href="~/css/DataTable.css">
 
 </head>
 <body class="nav-md">
@@ -52,7 +52,6 @@
 
                     <br />
 
-                    <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <h3>General</h3>
@@ -60,17 +59,27 @@
                                 <li>
                                     <a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
+
+                                        <li>
+
+                                            <a asp-controller="Empleados" asp-action="CalculoListado">Ir a CalculoListado</a>
+                                        </li>
+                                        <li>
+
+                                            <a asp-controller="Empleados" asp-action="CalculoListado">Ir a CalculoListado</a>
+                                        </li>
+
                                         <li><a href="fixed_sidebar.html">Dashboard3</a></li>
 
                                         <li><a href="dasboard1.html">Dashboard</a></li>
-                                        <li><a href="dashboard2.html">Dashboard2</a></li>
+
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-lock"></i> Acceso <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="form.html">General Form</a></li>
-                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="">Advanced Components</a></li>
                                         <li><a href="form_validation.html">Form Validation</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
                                         <li><a href="form_upload.html">Form Upload</a></li>
@@ -209,9 +218,6 @@
     <!-- Custom Theme Scripts -->
     <script src="~/build/js/custom.min.js"></script>
 
-
-    <script src="~/js/jquery-ui.js" asp-append-version="true"></script>
-
 </body>
 </html>
 <script>
@@ -223,9 +229,4 @@
 </script>
 
 
-@*@{
-        if(String.IsNullOrEmpty(Context.Session.GetString("NombreUsuario")))
-        {
-            Context.Response.Redirect("/Home/Login");
-        }
-    }*@
+

@@ -45,3 +45,4 @@ C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.dll
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\ref\SistemaActivos.Entities.dll
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.pdb
+C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Entities\obj\Debug\net5.0\SistemaActivos.Entities.csproj.AssemblyReference.cache

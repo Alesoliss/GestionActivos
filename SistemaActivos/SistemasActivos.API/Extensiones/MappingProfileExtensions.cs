@@ -13,7 +13,7 @@ namespace SistemasActivos.API.Extensiones
         public MappingProfileExtensions()
         {
             CreateMap<DepartamentosViewmodel, tbDepartamentos>().ReverseMap();
-            CreateMap<EmpleadosViewmodel, tbDepartamentos>().ReverseMap();
+            CreateMap<EmpleadosViewmodel, tbEmpleados>().ReverseMap();
 
         }
     }

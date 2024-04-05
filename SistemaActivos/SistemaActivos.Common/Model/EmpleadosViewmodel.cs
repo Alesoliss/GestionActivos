@@ -32,5 +32,84 @@ namespace SistemaActivos.Common.Model
 
 
 
+        [NotMapped]
+        public string Acti_Descripcion { get; set; }
+        [NotMapped]
+        public string Cate_Descripcion { get; set; }
+        [NotMapped]
+        public string Acti_NoSerio { get; set; }
+        [NotMapped]
+        public DateTime Acti_FechaAdquisicion { get; set; }
+        [NotMapped]
+        public decimal Acti_Precio { get; set; }
+        [NotMapped]
+        public decimal VidU_VidaEstimada { get; set; }
+        [NotMapped]
+        public decimal ValorResidual { get; set; }
+        [NotMapped]
+        public decimal CostoDepreciable { get; set; }
+
+        [NotMapped]
+        public decimal TasaResidualPorcentaje { get; set; }
+        [NotMapped]
+        public decimal TasaAnual { get; set; }
+        [NotMapped]
+        public decimal PeriodoAnios { get; set; }
+        [NotMapped]
+        public decimal Enero { get; set; }
+        [NotMapped]
+        public decimal Febrero { get; set; }
+        [NotMapped]
+        public decimal Marzo { get; set; }
+        [NotMapped]
+        public decimal Abril { get; set; }
+        [NotMapped]
+        public decimal Mayo { get; set; }
+        [NotMapped]
+        public decimal Junio { get; set; }
+        [NotMapped]
+        public decimal Julio { get; set; }
+        [NotMapped]
+        public decimal Agosto { get; set; }
+        [NotMapped]
+        public decimal Septiembre { get; set; }
+        [NotMapped]
+        public decimal Octubre { get; set; }
+        [NotMapped]
+        public decimal Noviembre { get; set; }
+        [NotMapped]
+        public decimal Diciembre { get; set; }
+        [NotMapped]
+        public decimal DepreciacionPeriodo { get; set; }
+        [NotMapped]
+        public decimal DepreciacionAcumulada { get; set; }
+        [NotMapped]
+        public decimal ValorEnLibros { get; set; }
+        [NotMapped]
+        public decimal TotalCostoOriginal { get; set; }
+        [NotMapped]
+        public decimal TotalValorResidual { get; set; }
+        [NotMapped]
+        public decimal TotalCostoDepreciable { get; set; }
+        [NotMapped]
+        public decimal TotalDepreciacionMensual { get; set; }
+        [NotMapped]
+        public decimal TotalDepreciacionPeriodo { get; set; }
+        [NotMapped]
+        public decimal TotalDepreciacionAcumulada { get; set; }
+        [NotMapped]
+        public decimal TotalValorEnLibros { get; set; }
+        [NotMapped]
+        public decimal TasaResidual { get; set; }
+        [NotMapped]
+        public decimal TasaDepreciacion { get; set; }
+        [NotMapped]
+        public DateTime FechaInicio { get; set; }
+        [NotMapped]
+        public DateTime FechaFinal { get; set; }
+
+
+
+
     }
 }
