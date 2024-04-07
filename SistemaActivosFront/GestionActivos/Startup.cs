@@ -34,7 +34,8 @@ namespace GestionActivos
             services.AddScoped<DepartamentoServicios>();
             services.AddScoped<EmpleadoServicio>();
             services.AddScoped<RolServicio>();
-
+            services.AddScoped<PantallasServicios>();
+            services.AddScoped<PantallasPorRolesServicios>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

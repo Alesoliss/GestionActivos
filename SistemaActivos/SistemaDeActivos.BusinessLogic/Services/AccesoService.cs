@@ -104,9 +104,18 @@ namespace SistemaDeActivos.BusinessLogic.Services
         #endregion
 
         #region Pantallas
-        public IEnumerable<tbPantallas> ListPant(int id)
+        public ServiceResult ListPant(int id)
         {
-            return _pantallasRepository.List(id);
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _pantallasRepository.List(id);
+                return result.Ok(lost);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
         }
 
 

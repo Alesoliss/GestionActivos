@@ -11,10 +11,14 @@ namespace GestionActivos.Controllers
     public class RolesController : Controller
     {
         private readonly RolServicio _rolServicio;
+        private readonly PantallasServicios _pantallasServicios;
+        private readonly PantallasPorRolesServicios _pantallasPorRolesServicios;
 
-        public RolesController(RolServicio rolServicio)
+        public RolesController(RolServicio rolServicio, PantallasPorRolesServicios pantallasPorRolesServicios, PantallasServicios pantallasServicios)
         {
             _rolServicio = rolServicio;
+            _pantallasServicios = pantallasServicios;
+            _pantallasPorRolesServicios = pantallasPorRolesServicios;
         }
 
         // GET: RolesController
@@ -36,8 +40,17 @@ namespace GestionActivos.Controllers
         // POST: RolesController/Crear
 
         [HttpGet("Roles/Create")]
-        public IActionResult Create()
+         public IActionResult Create()
         {
+
+            var listadoPantallas = _pantallasServicios.ObtenerPantallas();
+            //var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            ViewBag.ConsultaPantalla = listadoPantallas;
+
+            //int roleID = 0;
+            //var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
+            //var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            //ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
             return View();
         }
 

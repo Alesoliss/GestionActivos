@@ -35,15 +35,8 @@ namespace SistemasActivos.API.Controllers
         [HttpGet("Create")]
         public IActionResult Insert()
         {
-
-            var listadoPantallas = _accesoService.ListPant(1);
-            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            ViewBag.ConsultaPantalla = listadoPant.ToList();
-            int roleID = 0;
-            var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
-            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
-            return View();
+            var listado = _accesoService.ListPant(0);
+            return Ok(listado);
         }
 
         [HttpPost("Create")]
@@ -67,18 +60,24 @@ namespace SistemasActivos.API.Controllers
             //    TempData["Exito"] = "Insertado con exito";
 
             //}
-            var RolID = int.Parse(HttpContext.Session.GetString("@role_id"));
-            HttpContext.Session.SetString("RolID", RolID.ToString());
-            var listadoPantallas = _accesoService.ListPant(RolID);
-            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            ViewBag.ConsultaPantalla = listadoPant.ToList();
-            var listadoPantallasRoles = _accesoService.ListPantRole(RolID);
-            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+           
             return Ok(list);
 
         }
-        
+
+        [HttpGet("Actualizar")]
+        public IActionResult Editar()
+        {
+
+            var listadoPantallas = _accesoService.ListPant(1);
+            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            ViewBag.ConsultaPantalla = listadoPant.ToList();
+            int roleID = 0;
+            var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
+            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+            return Ok();
+        }
 
         [HttpPut("Actualizar")]
         public IActionResult Editar(RolesViewModel item)
@@ -106,14 +105,14 @@ namespace SistemasActivos.API.Controllers
 
             //}
 
-            //var listadoPantallas = _accesoServices.ListPant((int)RolID);
-            //var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            //ViewBag.ConsultaPantalla = listadoPant.ToList();
-            //var listadoPantallasRoles = _accesoServices.ListPantRole((int)RolID);
-            //var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            //ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+            var listadoPantallas = _accesoService.ListPant((int)RolID);
+            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            ViewBag.ConsultaPantalla = listadoPant.ToList();
+            var listadoPantallasRoles = _accesoService.ListPantRole((int)RolID);
+            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
             //if (!String.IsNullOrEmpty(mensaje))
-            //    ModelState.AddModelError("", mensaje);
+            //    ModelState.AddModelError("", mensaje);-
             //else
             //    return RedirectToAction("Index");
 

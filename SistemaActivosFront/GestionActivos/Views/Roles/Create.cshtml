@@ -25,8 +25,55 @@
         </form>
     </div>
 </div>
+<div class="row">
+    <div class="col-6 pantalla" style="background-color: #DFDFDF; width:100%">
+        <table class="table" id="tbPant">
+            <thead>
+                <tr>
+                    <th>
+                        Pantallas
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <select name="ddlPantallas" class="form-select" asp-items="@(ViewBag.ConsultarPantalla)"></select>
 
-<div>
-    <a asp-action="Index">Regresar</a>
+                @*@foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
+                {
+                    <tr>
+                        <td class="dragitem btn btn-dark" data-id="@item.Pant_Id" style="width:100%">
+                            @item.Pant_Descripcion
+                        </td>
+                    </tr>
+                }*@
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 pantallaPorRoles" style="background-color: #DFDFDF; width:100%;">
+        <table class="table" id="tbPantRole">
+            <thead>
+                <tr>
+                    <th>
+                        Pantallas Por Rol
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @*@foreach (var item in ViewBag.ConsultaPantallaPorRoles as IEnumerable<GestionActivos.Models.PantallasPorRolesViewModel>)
+                {
+                    <tr>
+                        <td class="dragitem">
+                            @Html.DisplayFor(modelItem => item.PantallasDescripcion)
+                        </td>
+                    </tr>
+                }*@
+            </tbody>
+        </table>
+    </div>
+
 </div>
+    <div>
+        <a asp-action="Index">Regresar</a>
+    </div>
 
