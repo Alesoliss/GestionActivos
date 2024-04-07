@@ -17,7 +17,8 @@ namespace SistemaDeActivos.BusinessLogic
             service.AddScoped<DepartamentosRepository>();
             service.AddScoped<RolesRepository>();
             service.AddScoped<EmpleadosRepository>();
-
+            service.AddScoped<PantallasPorRolesRepository>();
+            service.AddScoped<PantallasRepository>();
             SistemaActivosContext.BuildConnectionString(conn);
 
         }

@@ -15,6 +15,8 @@ namespace SistemasActivos.API.Extensiones
             CreateMap<DepartamentosViewmodel, tbDepartamentos>().ReverseMap();
             CreateMap<EmpleadosViewmodel, tbEmpleados>().ReverseMap();
             CreateMap<RolesViewModel, tbRoles>().ReverseMap();
+            CreateMap<PantallasViewModel, tbPantallas>().ReverseMap();
+            CreateMap<PantallasPorRolesViewModel, tbPantallasPorRoles>().ReverseMap();
 
         }
     }

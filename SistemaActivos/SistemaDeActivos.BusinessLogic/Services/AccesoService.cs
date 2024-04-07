@@ -12,10 +12,12 @@ namespace SistemaDeActivos.BusinessLogic.Services
     public class AccesoService
     {
         private readonly RolesRepository _rolesRepository;
+        private readonly PantallasRepository _pantallasRepository;
 
-        public AccesoService(RolesRepository rolesRepository)
+        public AccesoService(RolesRepository rolesRepository, PantallasRepository pantallasRepository)
         {
             _rolesRepository = rolesRepository;
+            _pantallasRepository = pantallasRepository;
         }
 
 
@@ -98,6 +100,24 @@ namespace SistemaDeActivos.BusinessLogic.Services
 
             }
         }
+
+        #endregion
+
+        #region Pantallas
+        public IEnumerable<tbPantallas> ListPant(int id)
+        {
+            return _pantallasRepository.List(id);
+        }
+
+
+        #endregion
+
+        #region PantallasPorRoles
+        public IEnumerable<tbPantallasPorRoles> ListPantRole(int Rol_Id)
+        {
+            return _pantallasRepository.ListPantRoles(Rol_Id);
+        }
+
 
         #endregion
     }

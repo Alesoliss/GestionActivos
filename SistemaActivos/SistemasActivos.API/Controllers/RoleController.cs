@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaActivos.Common.Model;
 using SistemaActivos.Entities.Entities;
@@ -31,7 +32,21 @@ namespace SistemasActivos.API.Controllers
             return Ok(listado);
         }
 
-       [HttpPost("Create")]
+        [HttpGet("Create")]
+        public IActionResult Insert()
+        {
+
+            var listadoPantallas = _accesoService.ListPant(1);
+            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            ViewBag.ConsultaPantalla = listadoPant.ToList();
+            int roleID = 0;
+            var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
+            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+            return View();
+        }
+
+        [HttpPost("Create")]
         public  IActionResult Insert(RolesViewModel item)
         {
             var model = _mapper.Map<RolesViewModel>(item);
@@ -52,13 +67,14 @@ namespace SistemasActivos.API.Controllers
             //    TempData["Exito"] = "Insertado con exito";
 
             //}
-            //HttpContext.Session.SetString("RolID", RolID.ToString());
-            //var listadoPantallas = _accesoServices.ListPant(RolID);
-            //var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            //ViewBag.ConsultaPantalla = listadoPant.ToList();
-            //var listadoPantallasRoles = _accesoServices.ListPantRole(RolID);
-            //var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            //ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+            var RolID = int.Parse(HttpContext.Session.GetString("@role_id"));
+            HttpContext.Session.SetString("RolID", RolID.ToString());
+            var listadoPantallas = _accesoService.ListPant(RolID);
+            var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            ViewBag.ConsultaPantalla = listadoPant.ToList();
+            var listadoPantallasRoles = _accesoService.ListPantRole(RolID);
+            var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
             return Ok(list);
 
         }

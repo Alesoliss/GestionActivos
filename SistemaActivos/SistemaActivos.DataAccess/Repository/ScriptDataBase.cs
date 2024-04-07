@@ -46,6 +46,7 @@ namespace SistemaActivos.DataAccess.Repository
         public static string PantallasPorRolesActualizar = "[Acce].[SP_PantallasPorRoles_Actulizar]";
         public static string PantallasPorRolesEliminar = "[Acce].[SP_PantallasPorRoles_Eliminar]";
         public static string PantallasPorRolesBuscar = "[Acce].[SP_PantallasPorRoles_Buscar]";
+        public static string PantallasPorRolesMostrar = "[Acce].[SP_PantallasPorRoles_Mostrar]";
         #endregion
     }
 }
