@@ -33,6 +33,7 @@ namespace GestionActivos
             services.AddControllersWithViews();
             services.AddScoped<DepartamentoServicios>();
             services.AddScoped<EmpleadoServicio>();
+            services.AddScoped<RolServicio>();
 
         }
 

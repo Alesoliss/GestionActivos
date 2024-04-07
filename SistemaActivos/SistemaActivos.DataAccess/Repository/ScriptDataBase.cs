@@ -26,5 +26,26 @@ namespace SistemaActivos.DataAccess.Repository
 
         #endregion
 
+
+        #region Pantallas
+        public static string PantallasListado = "[Acce].[SP_Pantallas_Listado]";
+        public static string PantallasBuscar = "[Acce].[SP_Pantallas_Buscar]";
+        #endregion
+
+        #region Roles
+        public static string RolesListado = "[Acce].[SP_Roles_Listado]";
+        public static string RolesInsertar = "[Acce].[SP_Roles_Insertar]";
+        public static string RolesActualizar = "[Acce].[SP_Roles_Actulizar]";
+        public static string RolesEliminar = "[Acce].[SP_Roles_Eliminar]";
+        public static string RolesBuscar = "[Acce].[SP_Roles_Buscar]";
+        #endregion
+
+        #region PantallasPorRoles
+        public static string PantallasPorRolesListado = "[Acce].[SP_PantallasPorRoles_Listado]";
+        public static string PantallasPorRolesInsertar = "[Acce].[SP_PantallasPorRoles_Insertar]";
+        public static string PantallasPorRolesActualizar = "[Acce].[SP_PantallasPorRoles_Actulizar]";
+        public static string PantallasPorRolesEliminar = "[Acce].[SP_PantallasPorRoles_Eliminar]";
+        public static string PantallasPorRolesBuscar = "[Acce].[SP_PantallasPorRoles_Buscar]";
+        #endregion
     }
 }

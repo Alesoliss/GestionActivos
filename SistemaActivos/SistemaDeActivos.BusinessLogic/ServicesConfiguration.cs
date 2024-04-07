@@ -15,6 +15,7 @@ namespace SistemaDeActivos.BusinessLogic
         public static void DataAccess(this IServiceCollection service, string conn)
         {
             service.AddScoped<DepartamentosRepository>();
+            service.AddScoped<RolesRepository>();
             service.AddScoped<EmpleadosRepository>();
 
             SistemaActivosContext.BuildConnectionString(conn);
@@ -24,8 +25,10 @@ namespace SistemaDeActivos.BusinessLogic
         public static void BusinessLogic(this IServiceCollection service)
         {
             service.AddScoped<GeneralServices>();
+            service.AddScoped<AccesoService>();
             service.AddScoped<ActiveService>();
 
         }
+        
     }
 }
