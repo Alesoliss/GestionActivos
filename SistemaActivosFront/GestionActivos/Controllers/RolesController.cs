@@ -55,6 +55,8 @@ namespace GestionActivos.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create(RolesViewModel item)
         {
             try

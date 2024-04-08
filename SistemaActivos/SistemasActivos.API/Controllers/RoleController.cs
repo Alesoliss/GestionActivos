@@ -33,10 +33,17 @@ namespace SistemasActivos.API.Controllers
         }
 
         [HttpGet("Create")]
-        public IActionResult Insert()
+        public async Task<IActionResult> Insert()
         {
-            var listado = _accesoService.ListPant(0);
-            return Ok(listado);
+            var listado = await _accesoService.ListPant(0);
+            if (listado.Success)
+            {
+                return Ok(listado.Data);
+            }
+            else
+            {
+                return StatusCode(500, new { message = listado.Message });
+            }
         }
 
         [HttpPost("Create")]
@@ -96,7 +103,6 @@ namespace SistemasActivos.API.Controllers
             //if (!String.IsNullOrEmpty(mensaje))
             //{
             //    TempData["Error"] = "El Registro ya existe";
-
 
             //}
             //else

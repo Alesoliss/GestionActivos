@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaActivos.Common.Model;
 using SistemaActivos.Entities.Entities;
+using SistemaDeActivos.BusinessLogic;
 using SistemaDeActivos.BusinessLogic.Services;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,13 @@ namespace SistemasActivos.API.Controllers
     public class EmpleadosController : Controller
     {
         private readonly ActiveService _activeService;
+        private readonly GeneralServices _generalServices;
+        private readonly IMapper _mapper;
 
-        public EmpleadosController(ActiveService activeService)
+        public EmpleadosController(GeneralServices generalServices, IMapper mapper, ActiveService activeService)
         {
+            _generalServices = generalServices;
+            _mapper = mapper;
             _activeService = activeService;
         }
 
@@ -85,7 +90,29 @@ namespace SistemasActivos.API.Controllers
             }
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create(EmpleadosViewmodel item)
+        {
+            var model = _mapper.Map<tbEmpleados>(item);
+            var modelo = new tbEmpleados()
+            {
+                Empl_DNI = item.Empl_DNI,
+                Empl_PNombre = item.Empl_PNombre,
+                Empl_SNombre = item.Empl_DNI,
+                Empl_PApellido = item.Empl_PApellido,
+                Empl_SApellido = item.Empl_SApellido,
+                Empl_Sexo = item.Empl_Sexo,
+                EstD_Id = item.EstD_Id,
+                Depa_Codigo = item.Depa_Codigo,
+                Muni_Codigo = item.Muni_Codigo,
+                Empl_DireccionE = item.Empl_DireccionE,
+                Empl_UsuarioCreacion = 1,
+                Empl_FechaCreacion = DateTime.Now
 
+            };
+            var list = _generalServices.InsertarEmpleado(modelo);
+            return Ok(list);
+        }
 
 
     }

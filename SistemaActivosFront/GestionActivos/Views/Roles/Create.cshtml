@@ -36,16 +36,18 @@
                 </tr>
             </thead>
             <tbody>
-                <select name="ddlPantallas" class="form-select" asp-items="@(ViewBag.ConsultarPantalla)"></select>
+                @*<select name="ddlPantallas" class="form-select" asp-items="@(ViewBag.ConsultarPantalla)"></select>*@
 
-                @*@foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
+                @foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
                 {
                     <tr>
                         <td class="dragitem btn btn-dark" data-id="@item.Pant_Id" style="width:100%">
                             @item.Pant_Descripcion
                         </td>
                     </tr>
-                }*@
+                }
+                
+
             </tbody>
         </table>
     </div>
@@ -76,4 +78,3 @@
     <div>
         <a asp-action="Index">Regresar</a>
     </div>
-

@@ -51,7 +51,7 @@ namespace GestionActivos.Servicios
             {
                 var response = await _api.Post<RolesViewModel, ServiceResult>(req =>
                 {
-                    req.Path = $"API/Departamento/Create";
+                    req.Path = $"API/Role/Create";
                     req.Content = item;
                 });
                 if (!response.Success)
