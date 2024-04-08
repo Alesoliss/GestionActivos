@@ -28,6 +28,7 @@ namespace SistemaActivos.DataAccess.Repository
         public static string CargosBuscar = "[Gnrl].[SP_Cargos_Buscar]";
         public static string CargosActualizar = "[Gnrl].[SP_Cargo_Actualizar]";
         public static string CargosEliminar = "[Gnrl].[SP_Cargo_Eliminar]";
+        public static string CargoDetalle = "[Gnrl].[SP_Cargos_Detalle]";
         #endregion
 
         #region Estados Civiles

@@ -34,3 +34,15 @@ C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\De
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.dll
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\ref\SistemaActivos.Common.dll
 C:\Users\LAB1\Desktop\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.pdb
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\bin\Debug\net5.0\SistemaActivos.Common.deps.json
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\bin\Debug\net5.0\SistemaActivos.Common.dll
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\bin\Debug\net5.0\ref\SistemaActivos.Common.dll
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\bin\Debug\net5.0\SistemaActivos.Common.pdb
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.csproj.AssemblyReference.cache
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.AssemblyInfoInputs.cache
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.AssemblyInfo.cs
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.csproj.CoreCompileInputs.cache
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.dll
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\ref\SistemaActivos.Common.dll
+C:\Users\LAB2\Documents\GitHub\GestionActivos\SistemaActivos\SistemaActivos.Common\obj\Debug\net5.0\SistemaActivos.Common.pdb

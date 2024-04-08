@@ -72,5 +72,33 @@ namespace SistemaActivos.DataAccess.Repository
                 return new RequestStatus { CodeStatus = result, MessageStatus = "" };
             }
         }
+
+        public IEnumerable<tbCargos> FindDetalle(int id)
+        {
+            string sql = ScriptDataBase.CargoDetalle;
+            List<tbCargos> result = new List<tbCargos>();
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("Carg_Id", id);
+                result = db.Query<tbCargos>(sql, parametro, commandType: System.Data.CommandType.StoredProcedure).ToList();
+                return result;
+            }
+        }
+
+        public RequestStatus EliminarCargo(int id)
+        {
+            string sql = ScriptDataBase.CargosEliminar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("Carg_Id", id);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+
+            }
+        }
     }
 }

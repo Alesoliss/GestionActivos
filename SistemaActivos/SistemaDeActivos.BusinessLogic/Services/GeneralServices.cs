@@ -139,7 +139,6 @@ namespace SistemaDeActivos.BusinessLogic
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
-
             }
         }
         #endregion
@@ -179,6 +178,79 @@ namespace SistemaDeActivos.BusinessLogic
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult ActualizarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _cargosRepository.Update(item);
+
+                if (lost.CodeStatus > 0)
+                {
+                    return result.Ok(lost);
+                }
+                else
+                {
+                    return result.Error(lost);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+
+            }
+        }
+
+        public IEnumerable<tbCargos> BuscarCargo(int codigo)
+        {
+            try
+            {
+                return _cargosRepository.FindDetalle(codigo);
+
+            }
+            catch
+            {
+                return Enumerable.Empty<tbCargos>();
+            }
+        }
+
+        public ServiceResult EliminarCargo(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _cargosRepository.EliminarCargo(id);
+                if (lost.CodeStatus > 0)
+                {
+                    return result.Ok(lost);
+                }
+                else
+                {
+                    return result.Error(lost);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public ServiceResult DetalleCargo(int codigo)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _cargosRepository.FindDetalle(codigo);
+                return result.Ok(list);
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex);
+
+            }
+        }
+        
 
         #endregion
 

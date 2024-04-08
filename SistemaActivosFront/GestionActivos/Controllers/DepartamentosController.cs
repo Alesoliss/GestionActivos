@@ -53,6 +53,7 @@ namespace GestionActivos.Controllers
                 return View(item);
             }
         }
+
         [HttpGet ("Departamentos/llenar/{Depa_Codigo}")]
         public async Task<IActionResult> llenar(DepartamentosViewmodel item, string Depa_Codigo)
         {
@@ -98,7 +99,7 @@ namespace GestionActivos.Controllers
         }
 
         //GET: DepartamentosController/Details
-        public async Task<IActionResult> Details(string Depa_Codigo, DepartamentosViewmodel item)
+        public async Task<IActionResult> Details(string Depa_Codigo )
         {
             var list = await _departamentoServicios.DetallesDepartamento(Depa_Codigo);
             if (list.Success)
@@ -106,7 +107,6 @@ namespace GestionActivos.Controllers
             {
                 try
                 {
-
                     var data = list.Data;
 
                     return View(data);

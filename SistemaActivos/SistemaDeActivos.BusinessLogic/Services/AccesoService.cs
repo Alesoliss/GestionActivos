@@ -13,13 +13,11 @@ namespace SistemaDeActivos.BusinessLogic.Services
     {
         private readonly RolesRepository _rolesRepository;
         private readonly PantallasRepository _pantallasRepository;
-        private readonly UsuarioRepository _usuarioRepository;
 
-        public AccesoService(RolesRepository rolesRepository, PantallasRepository pantallasRepository, UsuarioRepository usuarioRepository)
+        public AccesoService(RolesRepository rolesRepository, PantallasRepository pantallasRepository)
         {
             _rolesRepository = rolesRepository;
             _pantallasRepository = pantallasRepository;
-            _usuarioRepository = usuarioRepository;
         }
 
 
@@ -131,103 +129,5 @@ namespace SistemaDeActivos.BusinessLogic.Services
 
         #endregion
 
-        #region Usuarios
-
-        public ServiceResult ListUsuarios()
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var lost = _usuarioRepository.List();
-                return result.Ok(lost);
-            }
-            catch (Exception ex)
-            {
-                return result.Error(ex.Message);
-            }
-        }
-
-        public ServiceResult InsertarUsuario(tbUsuario item)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var lost = _usuarioRepository.Insert(item);
-                if (lost.CodeStatus > 0)
-                {
-                    return result.Ok(lost);
-                }
-                else
-                {
-                    return result.Error(lost);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error(ex.Message);
-            }
-        }
-
-        public ServiceResult ActualizarUsuario(tbUsuario item)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var lost = _usuarioRepository.Update(item);
-
-                if (lost.CodeStatus > 0)
-                {
-                    return result.Ok(lost);
-                }
-                else
-                {
-                    return result.Error(lost);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error(ex.Message);
-
-            }
-        }
-
-
-        public IEnumerable<tbUsuario> BuscarUsuario(int codigo)
-        {
-
-            try
-            {
-                return _usuarioRepository.FindUsuario(codigo);
-
-            }
-            catch
-            {
-                return Enumerable.Empty<tbUsuario>();
-            }
-        }
-
-        public ServiceResult EliminarUsuario(int id)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var lost = _usuarioRepository.EliminarUsuario(id);
-                if (lost.CodeStatus > 0)
-                {
-                    return result.Ok(lost);
-                }
-                else
-                {
-                    return result.Error(lost);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error(ex.Message);
-
-            }
-        }
-
-        #endregion
     }
 }

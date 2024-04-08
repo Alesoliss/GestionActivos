@@ -45,5 +45,49 @@ namespace SistemasActivos.API.Controllers
             return Ok(list);
         }
 
+        [HttpGet("LlenarCargos/{Carg_Id}")]
+        public IActionResult LlenarCargos(int Carg_Id)
+        {
+            var llenar = _generalServices.BuscarCargo(Carg_Id).ToList();
+            //HttpContext.Session.SetString("Depa_id", Depa_Codigo);
+            var id = llenar.FirstOrDefault()?.Carg_Id;
+            var descripcion = llenar.FirstOrDefault()?.Carg_Descripcion;
+            return Json(new { success = true, id, descripcion });
+        }
+
+        [HttpPut("Actualizar")]
+        public IActionResult Update(CargosViewModel item)
+        {
+
+            var model = _mapper.Map<tbCargos>(item);
+            var modelo = new tbCargos()
+            {
+                Carg_Id = item.Carg_Id,
+                Carg_Descripcion = item.Carg_Descripcion,
+                Carg_UsuarioModificacion = 1,
+                Carg_FechaModificacion = DateTime.Now
+
+            };
+            var list = _generalServices.ActualizarCargo(modelo);
+            return Ok(list);
+        }
+
+        [HttpDelete("Eliminar/{Carg_Id}")]
+        public IActionResult Delete(int Carg_Id)
+        {
+
+            var list = _generalServices.EliminarCargo(Carg_Id);
+
+            return Ok(list);
+
+        }
+
+        [HttpGet("Detalles")]
+        public IActionResult Details(int Carg_Id)
+        {
+            var list = _generalServices.DetalleCargo(Carg_Id);
+
+            return Ok(list);
+        }
     }
 }
