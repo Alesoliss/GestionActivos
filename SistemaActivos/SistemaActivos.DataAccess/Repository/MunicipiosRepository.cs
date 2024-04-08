@@ -59,7 +59,20 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbMunicipios item)
         {
-            throw new NotImplementedException();
+            string sql = ScriptDataBase.MunicipiosActualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Muni_Codigo", item.Muni_Codigo);
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Muni_Descripcion", item.Muni_Descripcion);
+                parametro.Add("@Muni_UsuarioModificacion", item.Muni_UsuarioModificacion);
+                parametro.Add("@Muni_FechaModificacion", item.Muni_FechaModificacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
         }
     }
 }

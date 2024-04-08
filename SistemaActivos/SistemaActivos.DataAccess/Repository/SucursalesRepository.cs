@@ -60,7 +60,22 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbSucursales item)
         {
-            throw new NotImplementedException();
+            string sql = ScriptDataBase.deptoactualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Sucu_Descripcion", item.Sucu_Descripcion);
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Muni_Codigo", item.Muni_Codigo);
+                parametro.Add("@Sucu_DireccionExacta", item.Sucu_DireccionExacta);
+                parametro.Add("@Sucu_UsuarioModificacion", item.Sucu_UsuarioModificacion);
+                parametro.Add("@Sucu_FechaModificacion", item.Sucu_FechaModificacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
         }
     }
 }

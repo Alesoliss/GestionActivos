@@ -58,7 +58,19 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbCargos item)
         {
-            throw new NotImplementedException();
+            string sql = ScriptDataBase.CargosActualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Carg_Id", item.Carg_Id);
+                parametro.Add("@Carg_Descripcion", item.Carg_Descripcion);
+                parametro.Add("@Carg_UsuarioModificacion", item.Carg_UsuarioModificacion);
+                parametro.Add("@Carg_FechaModificacion", item.Carg_FechaModificacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
         }
     }
 }

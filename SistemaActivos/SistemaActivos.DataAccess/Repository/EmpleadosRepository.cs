@@ -113,7 +113,29 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbEmpleados item)
         {
-            throw new NotImplementedException();
+            string sql = ScriptDataBase.EmpleadosActualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Empl_Id", item.Empl_Id);
+                parametro.Add("@Empl_DNI", item.Empl_DNI);
+                parametro.Add("@Empl_PNombre", item.Empl_PNombre);
+                parametro.Add("@Empl_SNombre", item.Empl_SNombre);
+                parametro.Add("@Empl_PApellido", item.Empl_PApellido);
+                parametro.Add("@Empl_SApellido", item.Empl_SApellido);
+                parametro.Add("@Empl_Sexo", item.Empl_Sexo);
+                parametro.Add("@EstD_Id", item.EstD_Id);
+                parametro.Add("@Depa_Codigo", item.Depa_Codigo);
+                parametro.Add("@Muni_Codigo", item.Muni_Codigo);
+                parametro.Add("@Empl_DireccionE", item.Empl_DireccionE);
+                parametro.Add("@Empl_UsuarioCreacion", item.Empl_UsuarioCreacion);
+                parametro.Add("@Empl_FechaCreacion", item.Empl_FechaCreacion);
+                parametro.Add("@Sucu_Id", item.Sucu_Id);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
         }
 
 

@@ -58,6 +58,19 @@ namespace SistemaActivos.DataAccess.Repository
 
         public RequestStatus Update(tbEstadosCiviles item)
         {
+            string sql = ScriptDataBase.EstadosCivilesActualizar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@EstD_Id", item.EstD_Id);
+                parametro.Add("@EstD_Descripcion", item.EstD_Descripcion);
+                parametro.Add("@EstD_UsuarioModificacion", item.EstD_UsuarioModificacion);
+                parametro.Add("@EstD_FechaModificacion", item.EstD_FechaModificacion);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
             throw new NotImplementedException();
         }
     }
