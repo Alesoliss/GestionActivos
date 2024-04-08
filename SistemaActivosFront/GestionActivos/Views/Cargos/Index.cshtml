@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GestionActivos.Models.CargosViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="collapse" id="CollapseCrear">
+    <div class="card card-body">
+        @Html.Partial("_Create", new SistemasActivos.API.Model.DepartamentosViewmodel())
+    </div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Carg_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carg_Descripcion)
+            </th>
+           
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carg_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carg_Descripcion)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

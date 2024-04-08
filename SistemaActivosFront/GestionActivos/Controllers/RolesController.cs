@@ -40,18 +40,22 @@ namespace GestionActivos.Controllers
         // POST: RolesController/Crear
 
         [HttpGet("Roles/Create")]
-         public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
 
-            var listadoPantallas = _pantallasServicios.ObtenerPantallas();
-            //var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            ViewBag.ConsultaPantalla = listadoPantallas;
+            var model = new List<PantallasViewModel>();
+            var list = await _pantallasServicios.ObtenerPantallas(); 
+            return View(list);
 
-            //int roleID = 0;
-            //var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
-            //var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            //ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
-            return View();
+            //var listadoPantallas = _pantallasServicios.ObtenerPantallas();
+            ////var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
+            //ViewBag.ConsultaPantalla = listadoPantallas;
+
+            ////int roleID = 0;
+            ////var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
+            ////var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
+            ////ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
+            //return View();
         }
 
         [HttpPost]

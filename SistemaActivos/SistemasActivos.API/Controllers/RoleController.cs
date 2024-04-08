@@ -33,7 +33,7 @@ namespace SistemasActivos.API.Controllers
         }
 
         [HttpGet("Create")]
-        public async Task<IActionResult> Insert()
+        public async Task<IActionResult> Create()
         {
             var listado = await _accesoService.ListPant(0);
             if (listado.Success)
@@ -47,7 +47,7 @@ namespace SistemasActivos.API.Controllers
         }
 
         [HttpPost("Create")]
-        public  IActionResult Insert(RolesViewModel item)
+        public  IActionResult Create(RolesViewModel item)
         {
             var model = _mapper.Map<RolesViewModel>(item);
             var modelo = new tbRoles()
