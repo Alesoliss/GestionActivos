@@ -17,7 +17,6 @@ namespace SistemasActivos.API.Extensiones
             CreateMap<RolesViewModel, tbRoles>().ReverseMap();
             CreateMap<PantallasViewModel, tbPantallas>().ReverseMap();
             CreateMap<PantallasPorRolesViewModel, tbPantallasPorRoles>().ReverseMap();
-            CreateMap<UsuariosViewModel, tbUsuario>().ReverseMap();
             CreateMap<CargosViewModel, tbCargos>().ReverseMap();
             CreateMap<EstadosCivilesViewModel, tbEstadosCiviles>().ReverseMap();
             CreateMap<MunicipiosViewModel, tbMunicipios>().ReverseMap();

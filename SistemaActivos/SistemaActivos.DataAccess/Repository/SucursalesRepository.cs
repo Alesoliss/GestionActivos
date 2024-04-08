@@ -45,7 +45,7 @@ namespace SistemaActivos.DataAccess.Repository
 
         public IEnumerable<tbSucursales> List()
         {
-            string sql = ScriptDataBase.SucursalesListar;
+            string sql = ScriptDataBase.SucursalesListado;
 
             List<tbSucursales> result = new List<tbSucursales>();
 

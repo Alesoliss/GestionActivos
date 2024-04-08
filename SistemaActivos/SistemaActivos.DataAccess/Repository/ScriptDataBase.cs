@@ -21,9 +21,46 @@ namespace SistemaActivos.DataAccess.Repository
         #endregion
 
 
+
+        #region Cargos
+        public static string CargosInsertar = "[Gnrl].[SP_Cargos_Insertar]";
+        public static string CargosListado = "[Gnrl].[SP_Cargos_Listado]";
+        public static string CargosBuscar = "[Gnrl].[SP_Cargos_Buscar]";
+        public static string CargosActualizar = "[Gnrl].[SP_Cargo_Actualizar]";
+        public static string CargosEliminar = "[Gnrl].[SP_Cargo_Eliminar]";
+        #endregion
+
+        #region Estados Civiles
+        public static string EstadosCivilesListar = "[Gnrl].[SP_EstadosCiviles_Listado]";
+        public static string EstadosCivilesInsertar = "[Gnrl].[SP_EstadosCiviles_Insertar]";
+        public static string EstadosCivilesActualizar = "[Gnrl].[SP_EstadosCiviles_Actulizar]";
+        public static string EstadosCivilesEliminar = "[Gnrl].[SP_EstadosCiviles_Eliminar]";
+        public static string EstadosCivilesBuscar = "[Gnrl].[SP_EstadosCiviles_Buscar]";
+        #endregion
+
+        #region Municipios
+        public static string MunicipiosInsertar = "[Gnrl].[SP_Municipios_Insertar]";
+        public static string MunicipiosListar = "[Gnrl].[SP_Municipios_Listado]";
+        public static string MunicipiosActualizar = "[Gnrl].[SP_Municipios_Actulizar]";
+        public static string MunicipiosBuscar = "[Gnrl].[SP_Municipios_Buscar]";
+        public static string MunicipiosEliminar = "[Gnrl].[SP_Municipios_Eliminar]";
+        #endregion
+
+        #region Sucursales
+        public static string SucursalesActualizar = "[Gnrl].[SP_Sucursales_Actulizar]";
+        public static string SucursalesInsertar = "[Gnrl].[SP_Sucursales_Insertar]";
+        public static string SucursalesEliminar = "[Gnrl].[SP_Sucursales_Eliminar]";
+        public static string SucursalesListado = "[Gnrl].[SP_Sucursales_Listado]";
+        public static string SucursalesBuscar = "[Gnrl].[SP_Sucursales_Buscar]";
+        #endregion
+
         #region Empleados
         public static string calculoPrincipal = "[Acti].[SP_Activos_Empleados_CalculoPrincipal]";
-
+        public static string EmpleadosListado = "[Gnrl].[SP_Empleados_Listado]";
+        public static string EmpleadosIngresar = "[Gnrl].[SP_Empleados_Ingresar]";
+        public static string EmpleadosBuscar = "[Gnrl].[SP_Empleados_Buscar]";
+        public static string EmpleadosActualizar = "[Gnrl].[SP_Empleados_Actualizar]";
+        public static string EmpleadosEliminar = "[Gnrl].[SP_Empleados_Eliminar]";
         #endregion
 
 
