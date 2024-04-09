@@ -33,16 +33,32 @@ namespace SistemasActivos.API.Controllers
         }
 
         [HttpGet("Create")]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var listado = await _accesoService.ListPant(0);
+            var listado =  _accesoService.ListPant(0);
             if (listado.Success)
             {
-                return Ok(listado.Data);
+                return Ok(listado);
             }
             else
             {
                 return StatusCode(500, new { message = listado.Message });
+            }
+
+            
+        }
+
+        [HttpGet("PantallasPorRoles")]
+        public IActionResult CreateParo()
+        {
+            var listado2 = _accesoService.ListPantRole(0);
+            if (listado2.Success)
+            {
+                return Ok(listado2);
+            }
+            else
+            {
+                return StatusCode(500, new { message = listado2.Message });
             }
         }
 
@@ -67,6 +83,8 @@ namespace SistemasActivos.API.Controllers
             //    TempData["Exito"] = "Insertado con exito";
 
             //}
+            var RolID = 0;
+            HttpContext.Session.SetString("role_id", RolID.ToString());
            
             return Ok(list);
 

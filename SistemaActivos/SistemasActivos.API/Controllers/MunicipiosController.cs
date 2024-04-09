@@ -47,5 +47,13 @@ namespace SistemasActivos.API.Controllers
             var list = _generalServices.InsertarMunicipios(modelo);
             return Ok(list);
         }
+
+        [HttpDelete("Eliminar/{Muni_Codigo}")]
+        public IActionResult Delete(string Muni_Codigo)
+        { 
+            var list = _generalServices.EliminarMunicipio(Muni_Codigo);
+            return Ok(list);
+        }
+
     }
 }

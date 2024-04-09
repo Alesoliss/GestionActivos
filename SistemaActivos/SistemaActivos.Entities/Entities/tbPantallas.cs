@@ -14,7 +14,7 @@ namespace SistemaActivos.Entities.Entities
         }
 
         public int Pant_Id { get; set; }
-        public string Pant_Descripcion { get; set; }
+        public string? Pant_Descripcion { get; set; }
 
         public virtual ICollection<tbPantallasPorRoles> tbPantallasPorRoles { get; set; }
     }

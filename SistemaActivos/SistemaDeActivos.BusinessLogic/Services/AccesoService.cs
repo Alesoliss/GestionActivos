@@ -104,11 +104,11 @@ namespace SistemaDeActivos.BusinessLogic.Services
         #endregion
 
         #region Pantallas
-        public async Task<ServiceResult> ListPant(int id)
+        public ServiceResult ListPant(int id)
         {
             try
             {
-                var lost = await _pantallasRepository.List(id);
+                var lost =  _pantallasRepository.List(id);
                 return new ServiceResult().Ok(lost);
             }
             catch (Exception ex)
@@ -121,11 +121,23 @@ namespace SistemaDeActivos.BusinessLogic.Services
         #endregion
 
         #region PantallasPorRoles
-        public IEnumerable<tbPantallasPorRoles> ListPantRole(int Rol_Id)
+        public IEnumerable<tbPantallasPorRoles> ListPantRole1(int Rol_Id)
         {
             return _pantallasRepository.ListPantRoles(Rol_Id);
         }
 
+        public ServiceResult ListPantRole(int Rol_Id)
+        {
+            try
+            {
+                var lost = _pantallasRepository.ListPantRoles(Rol_Id);
+                return new ServiceResult().Ok(lost);
+            }
+            catch (Exception ex)
+            {
+                return new ServiceResult().Error(ex.Message);
+            }
+        }
 
         #endregion
 

@@ -47,9 +47,8 @@ namespace SistemaActivos.DataAccess.Repository
                 parameter.Add("@Role_Descripcion", item.Role_Descripcion);
                 parameter.Add("@Role_UsuarionCreacion", item.Role_UsuarionCreacion);
                 parameter.Add("@Role_FechaCreacion", item.Role_FechaCreacion);
-                //parameter.Add("@role_id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                parameter.Add("@role_id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                //int roleId = parameter.Get<int>("@role_id");
                 var result = db.Execute(sql, parameter, commandType: CommandType.StoredProcedure);
 
                 //string mensaje = (result == 1) ? "exito" : "error";

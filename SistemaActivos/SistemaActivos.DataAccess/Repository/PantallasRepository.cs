@@ -28,17 +28,17 @@ namespace SistemaActivos.DataAccess.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<tbPantallas>> List(int RolID)
+        public  IEnumerable<tbPantallas> List(int RolID)
         {
             string sql = ScriptDataBase.PantallasListado;
 
-            //List<tbPantallas> result = new List<tbPantallas>();
+            List<tbPantallas> result = new List<tbPantallas>();
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@Role_Id", RolID);
-                await db.OpenAsync();                
-                var result = await db.QueryAsync<tbPantallas>(sql, parameter, commandType: CommandType.StoredProcedure);
+                //await db.OpenAsync();                
+                 result =  db.Query<tbPantallas>(sql, parameter, commandType: CommandType.StoredProcedure).ToList();
                 return result; 
             }
             //throw new NotImplementedException();

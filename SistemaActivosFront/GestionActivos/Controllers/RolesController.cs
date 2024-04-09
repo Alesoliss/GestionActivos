@@ -44,17 +44,16 @@ namespace GestionActivos.Controllers
         {
 
             var model = new List<PantallasViewModel>();
-            var list = await _pantallasServicios.ObtenerPantallas(); 
-            return View(list);
+            var list = await _pantallasServicios.ObtenerPantallas();
+            ViewBag.ConsultaPantalla = list.Data;
+
+            var listadoPantallasRoles = await _pantallasPorRolesServicios.ObtenerPantallasPorRoles();
+            ViewBag.ConsultaPantallaPorRoles = listadoPantallasRoles.Data;
+            return View();
 
             //var listadoPantallas = _pantallasServicios.ObtenerPantallas();
             ////var listadoPant = _mapper.Map<IEnumerable<PantallasViewModel>>(listadoPantallas);
-            //ViewBag.ConsultaPantalla = listadoPantallas;
 
-            ////int roleID = 0;
-            ////var listadoPantallasRoles = _accesoService.ListPantRole(roleID);
-            ////var listadoPantRoles = _mapper.Map<IEnumerable<PantallasPorRolesViewModel>>(listadoPantallasRoles);
-            ////ViewBag.ConsultaPantallaPorRoles = listadoPantRoles.ToList();
             //return View();
         }
 

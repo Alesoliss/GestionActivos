@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace GestionActivos.Servicios
 {
-    public class PantallasPorRolesServicios
+    public class MunicipiosServicios
     {
         private readonly API _api;
 
-        public PantallasPorRolesServicios(API api)
+        public MunicipiosServicios(API api)
         {
             _api = api;
         }
 
-        public async Task<ServiceResult> ObtenerPantallasPorRoles()
+        public async Task<ServiceResult> ObtenerMunicipioList()
         {
             var result = new ServiceResult();
             try
             {
-                var response = await _api.Get<IEnumerable<PantallasPorRolesViewModel>, IEnumerable<PantallasPorRolesViewModel>>(req =>
+                var response = await _api.Get<IEnumerable<MunicipiosViewModel>, IEnumerable<MunicipiosViewModel>>(req =>
                 {
-                    req.Path = $"/API/Role/PantallasPorRoles";
+                    req.Path = $"/API/Municipios/Listado";
                 });
                 if (!response.Success)
                 {
@@ -36,10 +36,9 @@ namespace GestionActivos.Servicios
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al obtener la lista de pantallasPorRoles", ex);
-
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
             }
         }
-
     }
 }

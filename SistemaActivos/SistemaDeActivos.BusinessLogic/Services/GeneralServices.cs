@@ -365,6 +365,27 @@ namespace SistemaDeActivos.BusinessLogic
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult EliminarMunicipio(string id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _municipiosRepository.EliminarMunicipio(id);
+                if (lost.CodeStatus > 0)
+                {
+                    return result.Ok(lost);
+                }
+                else
+                {
+                    return result.Error(lost);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
         #endregion
 
         #region Sucursales

@@ -74,5 +74,19 @@ namespace SistemaActivos.DataAccess.Repository
                 return new RequestStatus { CodeStatus = result, MessageStatus = "" };
             }
         }
+
+        public RequestStatus EliminarMunicipio(string id)
+        {
+            string sql = ScriptDataBase.MunicipiosEliminar;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("Muni_Codigo", id);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
+        }
     }
 }

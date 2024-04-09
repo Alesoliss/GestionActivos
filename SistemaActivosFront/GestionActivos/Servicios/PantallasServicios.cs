@@ -16,8 +16,9 @@ namespace GestionActivos.Servicios
             _api = api;
         }
 
-        public async Task<IEnumerable<PantallasViewModel>> ObtenerPantallas()
+        public async Task<ServiceResult> ObtenerPantallas()
         {
+            var result = new ServiceResult();
             try
             {
                 var response = await _api.Get<IEnumerable<PantallasViewModel>, IEnumerable<PantallasViewModel>>(req =>
@@ -27,11 +28,11 @@ namespace GestionActivos.Servicios
 
                 if (!response.Success)
                 {
-                    return new List<PantallasViewModel>();
+                    return result.FromApi(response);
                 }
                 else
                 {
-                    return response.Data;
+                    return result.Ok(response.Data);
                 }
             }
             catch (Exception ex)

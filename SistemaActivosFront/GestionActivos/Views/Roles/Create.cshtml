@@ -10,7 +10,7 @@
 <h4>RolesViewModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
@@ -25,6 +25,8 @@
         </form>
     </div>
 </div>
+
+
 <div class="row">
     <div class="col-6 pantalla" style="background-color: #DFDFDF; width:100%">
         <table class="table" id="tbPant">
@@ -36,16 +38,15 @@
                 </tr>
             </thead>
             <tbody>
-                <select name="ddlPantallas" class="form-select" asp-items="@(ViewBag.ConsultarPantalla)"></select>
 
-                @*@foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
+                @foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
                 {
                     <tr>
                         <td class="dragitem btn btn-dark" data-id="@item.Pant_Id" style="width:100%">
-                            @item.Pant_Descripcion
+                            @Html.DisplayFor(modelItem => item.Pant_Descripcion)
                         </td>
                     </tr>
-                }*@
+                }
                 
 
             </tbody>
@@ -62,14 +63,14 @@
             </thead>
             <tbody>
 
-                @*@foreach (var item in ViewBag.ConsultaPantallaPorRoles as IEnumerable<GestionActivos.Models.PantallasPorRolesViewModel>)
+                @foreach (var item in ViewBag.ConsultaPantallaPorRoles as IEnumerable<GestionActivos.Models.PantallasPorRolesViewModel>)
                 {
                     <tr>
                         <td class="dragitem">
                             @Html.DisplayFor(modelItem => item.PantallasDescripcion)
                         </td>
                     </tr>
-                }*@
+                }
             </tbody>
         </table>
     </div>
