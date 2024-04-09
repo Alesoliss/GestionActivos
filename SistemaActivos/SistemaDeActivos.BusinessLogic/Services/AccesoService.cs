@@ -141,6 +141,24 @@ namespace SistemaDeActivos.BusinessLogic.Services
             }
         }
 
+
+        public string InsertarPor(int id, int RolID, int UserId, DateTime date)
+        {
+            string error = "";
+            try
+            {
+                int resull = _pantallaRepository.InsertarPOR(id, RolID, UserId, date);
+                if (resull != 1)
+                    error = "Error";
+                return error;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return error;
+            }
+        }
+
         #endregion
 
     }

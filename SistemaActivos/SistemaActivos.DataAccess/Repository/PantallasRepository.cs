@@ -65,5 +65,24 @@ namespace SistemaActivos.DataAccess.Repository
                 return result;
             }
         }
+
+       
+
+        public int Eliminar(int id, int rolID)
+        {
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Pant_ID", id);
+                parametro.Add("@Role_ID", rolID);
+                var result = db.Execute("[Acce].[SP_PantallasPorRoles_Eliminar]",
+                    parametro,
+                     commandType: CommandType.StoredProcedure
+                    );
+
+                return result;
+            }
+        }
+
     }
 }
