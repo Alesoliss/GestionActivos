@@ -64,8 +64,20 @@ namespace GestionActivos.Controllers
         {
             try
             {
+
                 var list = await _rolServicio.CrearRoles(item);
-                return RedirectToAction("Index");
+                if (list.Success)
+                {
+                    var model = new List<PantallasViewModel>();
+                    var lista = await _pantallasServicios.ObtenerPantallas();
+                    ViewBag.ConsultaPantalla = lista.Data;
+
+                    var listadoPantallasRoles = await _pantallasPorRolesServicios.ObtenerPantallasPorRoles();
+                    ViewBag.ConsultaPantallaPorRoles = listadoPantallasRoles.Data;
+                    var scoop = list.Message.ToString();
+                    item.scoop = int.Parse(scoop);
+                }
+                return View(item);
             }
             catch (Exception ex)
             {

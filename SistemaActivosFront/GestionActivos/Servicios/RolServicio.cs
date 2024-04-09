@@ -56,11 +56,13 @@ namespace GestionActivos.Servicios
                 });
                 if (!response.Success)
                 {
+                    
                     return result.FromApi(response);
                 }
                 else
                 {
-                    return result.Ok(response.Data);
+                    var prueba = response.Message.ToString();
+                    return result.Ok(prueba);
                 }
             }
             catch (Exception ex)

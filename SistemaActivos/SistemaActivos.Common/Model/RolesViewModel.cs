@@ -10,5 +10,7 @@ namespace SistemaActivos.Common.Model
     {
         public int Role_Id { get; set; }
         public string Role_Descripcion { get; set; }
+        [NotMapped]
+        public int scoop { get; set; }
     }
 }

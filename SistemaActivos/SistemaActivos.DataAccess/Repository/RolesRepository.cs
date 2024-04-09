@@ -38,7 +38,7 @@ namespace SistemaActivos.DataAccess.Repository
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbRoles item)
+        public (RequestStatus, int) Insert(tbRoles item)
         {
             string sql = ScriptDataBase.RolesInsertar;
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
@@ -50,9 +50,10 @@ namespace SistemaActivos.DataAccess.Repository
                 parameter.Add("@role_id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 var result = db.Execute(sql, parameter, commandType: CommandType.StoredProcedure);
+                int roleId = parameter.Get<int>("@role_id");
 
-                //string mensaje = (result == 1) ? "exito" : "error";
-                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+                string mensaje = (result == 1) ? "exito" : "error";
+                return (new RequestStatus { CodeStatus = result, MessageStatus = "" }, roleId);
             }
 
             throw new NotImplementedException();
@@ -102,6 +103,11 @@ namespace SistemaActivos.DataAccess.Repository
                 result = db.Query<tbRoles>(sql, parameters, commandType: CommandType.StoredProcedure).ToList();
                 return result;
             }
+        }
+
+        RequestStatus IRepository<tbRoles>.Insert(tbRoles item)
+        {
+            throw new NotImplementedException();
         }
     }
 }

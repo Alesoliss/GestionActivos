@@ -35,24 +35,26 @@ namespace SistemaDeActivos.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        public ServiceResult InsertarRol(tbRoles item)
+        public (ServiceResult, int) InsertarRol(tbRoles item)
         {
             var result = new ServiceResult();
+            int rolid = 0;
             try
             {
                 var lost = _rolesRepository.Insert(item);
-                if (lost.CodeStatus > 0)
+                rolid = lost.Item2;
+                if (lost.Item1.CodeStatus > 0)
                 {
-                    return result.Ok(lost);
+                    return (result.Ok(lost), rolid);
                 }
                 else
                 {
-                    return result.Error(lost);
+                    return (result.Error(lost), rolid);
                 }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return (result.Error(ex.Message), rolid);
             }
         }
 

@@ -31,7 +31,7 @@ jQuery(document).ready(function () {
             $("#tbPantRole tbody").append(newRow);
             reinitializeDraggable();
 
-           
+           var url = ""
             $.ajax({
                 url: '/Rol/AgregarPantallaPorRol',
 /*                type: 'POST',*/
@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
                         transitionIn: 'flipInX',
                         transitionOut: 'flipOutX'
 
-                    });
+                    });  
                 },
                 error: function (error) {
                     sessionStorage.setItem('sess', 'hola');

@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="~/css/DataTable.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -194,6 +197,8 @@
         </div>
     </div>
 
+
+    <script src="~/js/JqueryVS3_7_1.js"></script>
     <!-- jQuery -->
     <script src="~/vendors/jquery/dist/jquery.min.js"></script>
 
@@ -212,25 +217,29 @@
     <!-- Custom Theme Scripts -->
     <script src="~/build/js/custom.min.js"></script>
 
-    <script src="~/js/jquery-ui.js"></script>
     <script src="~/js/site.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="~/js/jquery-ui.js"></script>
 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="~/js/DataTable.js"></script>
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
 </body>
 </html>
-<script>
-    window.addEventListener('pageshow', function (event) {
-        if (event.persisted) {
-            window.location.reload();
-        }
-    });
 
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
-</script>
+
 
 
 

@@ -72,20 +72,9 @@ namespace SistemasActivos.API.Controllers
                 Role_UsuarionCreacion = 1,
                 Role_FechaCreacion = DateTime.Now
             };
-            var list  = _accesoService.InsertarRol(modelo);
-            //if (!String.IsNullOrEmpty(resultado))
-            //{
-            //    TempData["Error"] = "El Registro ya existe";
-
-            //}
-            //else
-            //{
-            //    TempData["Exito"] = "Insertado con exito";
-
-            //}
-            var RolID = 0;
-            HttpContext.Session.SetString("role_id", RolID.ToString());
-           
+            (var list, int RolID)  = _accesoService.InsertarRol(modelo);
+            list.Message = RolID.ToString();
+                
             return Ok(list);
 
         }

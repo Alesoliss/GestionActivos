@@ -14,6 +14,8 @@ namespace GestionActivos.Models
         [NotMapped]
         public int Pant_Id { get; set; }
         [NotMapped]
-        public string? Pant_Descripcion { get; set; }
+        public string? Pant_Descripcion { get; set; } 
+        [NotMapped]
+        public int scoop { get; set; }
     }
 }
