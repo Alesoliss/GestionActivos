@@ -153,7 +153,7 @@ namespace GestionActivos.Servicios
             {
                 var response = await _api.Get<IEnumerable<VidaUtilViewmodel>, IEnumerable<VidaUtilViewmodel>>(req =>
                 {
-                    req.Path = $"​/API​/VidaUtil​/Detalles?VidU_Id={VidU_Id}";
+                    req.Path = $"/API/VidaUtil/Detalles?VidU_Id={VidU_Id}";
                 });
                 if (!response.Success)
                 {
