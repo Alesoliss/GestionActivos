@@ -1,0 +1,28 @@
+﻿@model GestionActivos.Models.CargosViewModel
+
+<h4>CargosViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input hidden asp-for="Carg_Id" class="form-control" id="txtCargId"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carg_Descripcion" class="control-label"></label>
+                <input asp-for="Carg_Descripcion" class="form-control" id="txtCargDesc" />
+                <span asp-validation-for="Carg_Descripcion" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Cancelar</a>
+</div>
+

@@ -1,0 +1,46 @@
+﻿@model GestionActivos.Models.MunicipiosViewModel
+
+<h4>MunicipiosViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6">
+                <label asp-for="Muni_Codigo" class="control-label"></label>
+                <input asp-for="Muni_Codigo" class="form-control" />
+                <span asp-validation-for="Muni_Codigo" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Depa_Codigo" class="control-label"></label>
+                <select asp-for="Depa_Codigo" class="form-control" id="dept_Id">
+
+                    @foreach (var departamento in ViewBag.Departa)
+                    {
+                        <option value="@departamento.Value">@departamento.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="Depa_Codigo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="Muni_Descripcion" class="control-label"></label>
+                <input asp-for="Muni_Descripcion" class="form-control" />
+                <span asp-validation-for="Muni_Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Cancelar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,125 @@
+﻿@model IEnumerable<GestionActivos.Models.SucursalesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<div class="collapse" id="CollapseCrear">
+    <div class="card card-body">
+        @Html.Partial("_Create", new GestionActivos.Models.SucursalesViewModel())
+    </div>
+</div>
+
+<div class="collapse" id="CollapseActualizar">
+    <div class="card card-body">
+        @Html.Partial("_Update", new GestionActivos.Models.SucursalesViewModel())
+    </div>
+</div>
+<div class="collapse show" id="CollapseTabla">
+    <p>
+        @*<a asp-action="Create">Create New</a>*@
+        <a asp-action="Create" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseCrear, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample">Nuevo</a>
+
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Sucu_Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Depa_Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Muni_Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sucu_DireccionExacta)
+                </th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sucu_Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Depa_Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Muni_Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sucu_DireccionExacta)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Sucu_Id" data-toggle="collapse" data-target="#CollapseActualizar , #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Sucu_Id')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>|
+
+                        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+
+    function LLenarCollapse(id) {
+        //$(".editar-depa").click(function () {
+        console.log("entra?");
+        //var id = $(this).data("depa-id");
+        var url = "https://localhost:44311/API/Sucursales/LlenarCategoria/" + id;
+        console.log(url);
+        fetch(url).then(function (result) {
+            if (result.ok) {
+                console.log("entra?");
+                return result.json();
+            }
+            else {
+                console.log("No entra");
+            }
+        }).then(function (data) {
+            console.log("data = " + data);
+            var descripcion = data.descripcion;
+
+            console.log("Id=" + id);
+            console.log("des=" + data.idde);
+
+            $("#sucuId").val(id);
+            $("#txtdescrip").val(data.descripcion);
+            $("#txtdireccion").val(data.direccion);
+            $("#muni_Id").val(data.municipio);
+            $("#dept_Id").val(data.departamento);
+
+        });
+    }
+
+    function ObtenerDelete(id) {
+        $("#Muni_Codi").val(id);
+        console.log("id" + id);
+        sessionStorage.setItem('sess', id);
+    }
+    function validarId() {
+        var valor = sessionStorage.getItem('sess');
+        if (valor != $("#id").val()) {
+            $("#btnEliminar").attr("name", "invalido")
+        }
+        sessionStorage.clear();
+    }
+</script>

@@ -1,0 +1,9 @@
+﻿@model SistemasActivos.API.Model.DepartamentosViewmodel
+
+<div>        
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Depa_Codigo" id="Depa_Codi" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

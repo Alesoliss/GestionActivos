@@ -1,0 +1,91 @@
+﻿@model GestionActivos.Models.RolesViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>RolesViewModel</h4>
+<hr />
+<input type="hidden" asp-for="scoop" id="scoop" />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Role_Descripcion" class="control-label"></label>
+                <input asp-for="Role_Descripcion" class="form-control" />
+                <span asp-validation-for="Role_Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-6 pantalla" style="background-color: #DFDFDF; width:100%">
+        <table class="table" id="tbPant">
+            <thead>
+                <tr>
+                    <th>
+                        Pantallas
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in ViewBag.ConsultaPantalla as IEnumerable<GestionActivos.Models.PantallasViewModel>)
+                {
+                    <tr>
+                        <td class="dragitem btn btn-dark" data-id="@item.Pant_Id" style="width:100%">
+                            @Html.DisplayFor(modelItem => item.Pant_Descripcion)
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 pantallaPorRoles" style="background-color: #DFDFDF; width:100%;">
+        <table class="table" id="tbPantRole">
+            <thead>
+                <tr>
+                    <th>
+                        Pantallas Por Rol
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in ViewBag.ConsultaPantallaPorRoles as IEnumerable<GestionActivos.Models.PantallasPorRolesViewModel>)
+                {
+                    <tr>
+                        <td class="dragitem">
+                            @Html.DisplayFor(modelItem => item.PantallasDescripcion)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+<script src="~/js/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var scoop = $("#scoop").val();
+        sessionStorage.setItem("scoop", scoop);
+    })
+</script>

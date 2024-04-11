@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GestionActivos.Models.EstadosCivilesViewModel>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+@foreach (var esta in Model)
+{
+<div>
+    <h4>EstadosCivilesViewModel</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => esta.EstD_Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => esta.EstD_Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => esta.Uuno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => esta.Uuno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => esta.EstD_FechaCracion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => esta.EstD_FechaCracion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => esta.Udos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => esta.Udos)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => esta.EstD_FechaModificacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => esta.EstD_FechaModificacion)
+        </dd>
+    </dl>
+</div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

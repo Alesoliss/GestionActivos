@@ -1,0 +1,120 @@
+﻿@model IEnumerable<GestionActivos.Models.EstadosCivilesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+    <a asp-action="Create" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseCrear, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample">Nuevo</a>
+
+</p>
+
+
+<div class="collapse" id="CollapseActualizar">
+    <div class="card card-body">
+        @Html.Partial("_Update", new GestionActivos.Models.EstadosCivilesViewModel())
+    </div>
+</div>
+
+<div class="collapse show" id="CollapseTabla">
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.EstD_Descripcion)
+                </th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstD_Descripcion)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EstD_Id" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.EstD_Id')"><i class="fas fa-edit btn-xs">Editar</i></a>
+                        <a href="@Url.Action("Details", "EstadosCiviles", new {EstD_Id = item.EstD_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+                        <a asp-action="Eliminar" class="btn btn-danger" asp-route-id="@item.EstD_Id" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.EstD_Id')"><i class="fas fa-trash-alt btn-xs">Eliminar</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Eliminar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h3>Esta seguro de eliminar este registro?</h3>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("_Delete", new GestionActivos.Models.EstadosCivilesViewModel())
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function LLenarCollapse(id) {
+        //$(".editar-depa").click(function () {
+        console.log("entra?");
+        //var id = $(this).data("depa-id");
+        var url = "https://localhost:44311/API/EstadosCiviles/LlenarEstadosCiviles/" + id;
+        console.log(url);
+        fetch(url).then(function (result) {
+            if (result.ok) {
+                console.log("entra?");
+                return result.json();
+            }
+            else {
+                console.log("No entra");
+            }
+        }).then(function (data) {
+            console.log("data = " + data);
+            var descripcion = data.descripcion;
+
+            console.log("Id=" + id);
+            console.log("des=" + data.descripcion);
+
+            $("#Estado_Id").val(id);
+            $("#txtDescripcion").val(descripcion);
+
+        });
+    }
+
+
+
+    function ObtenerDelete(id) {
+        $("#EstD_Id").val(id);
+        console.log("id" + id);
+        sessionStorage.setItem('sess', id);
+    }
+    function validarId() {
+        var valor = sessionStorage.getItem('sess');
+        if (valor != $("#id").val()) {
+            $("#btnEliminar").attr("name", "invalido")
+        }
+        sessionStorage.clear();
+    }
+</script>

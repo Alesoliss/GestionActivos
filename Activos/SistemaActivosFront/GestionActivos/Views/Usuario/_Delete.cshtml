@@ -1,0 +1,9 @@
+﻿@model SistemaActivos.Common.Model.UsuariosViewmodel
+
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Usua_Id" id="UsuaId" />
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

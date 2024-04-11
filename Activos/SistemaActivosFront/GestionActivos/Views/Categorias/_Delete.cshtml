@@ -1,0 +1,10 @@
+﻿@model SistemasActivos.API.Model.CategoriasViewmodel
+
+<div>  
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Cate_Id" id="cateId"/>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

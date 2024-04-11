@@ -1,0 +1,10 @@
+﻿@model GestionActivos.Models.EstadosCivilesViewModel
+
+<div>
+    <form asp-action="Delete">
+        <input asp-for="EstD_Id" type="hidden" id="EstD_Id" class="form-control" />
+
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

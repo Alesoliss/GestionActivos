@@ -1,0 +1,89 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "DbgestionactivosContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "SistemaActivos.Entities\/Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[Acce].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbPantallasPorRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbUsuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acti].[tbActivos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acti].[tbActivosBitacora]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acti].[tbCategorias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acti].[tbVidaUtil]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbCargos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gnrl].[tbSucursales]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "Alejandra\\SQLEXPRESS01.DBGestionActivos",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

@@ -1,0 +1,167 @@
+﻿@model SistemaActivos.Common.Model.ActivosViewmodel
+
+<h4>Agregar Activo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label asp-for="Acti_Url" class="control-label">URL:</label>
+                                <input asp-for="Acti_Url" class="form-control" placeholder="Ingrese la URL del activo" />
+                                <span asp-validation-for="Acti_Url" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label asp-for="Acti_Descripcion" class="control-label">Descripción:</label>
+                                <input asp-for="Acti_Descripcion" class="form-control" placeholder="Ingrese la descripción del activo" />
+                                <span asp-validation-for="Acti_Descripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class=" col-md-6">
+                            <label asp-for="Acti_Precio" class="control-label">Precio:</label>
+                            <input asp-for="Acti_Precio" class="form-control" placeholder="Ingrese el precio del activo" />
+                            <span asp-validation-for="Acti_Precio" class="text-danger"></span>
+                        </div>
+
+                        <div class=" col-md-6">
+                            <label asp-for="Acti_Marca" class="control-label">Marca:</label>
+                            <input asp-for="Acti_Marca" class="form-control" placeholder="Ingrese la marca del activo" />
+                            <span asp-validation-for="Acti_Marca" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class=" col-md-6">
+                            <label asp-for="Acti_Modelo" class="control-label">Modelo:</label>
+                            <input asp-for="Acti_Modelo" class="form-control" placeholder="Ingrese el modelo del activo" />
+                            <span asp-validation-for="Acti_Modelo" class="text-danger"></span>
+                        </div>
+
+                        <div class=" col-md-6">
+                            <label asp-for="Acti_NoSerio" class="control-label">Número de Serie:</label>
+                            <input asp-for="Acti_NoSerio" class="form-control" placeholder="Ingrese el número de serie del activo" />
+                            <span asp-validation-for="Acti_NoSerio" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Empl_Id">Selecciona un empleado:</label>
+                        <select id="Empl_Id" name="Empl_Id" class="form-control">
+                            <option value="">Selecciona un empleado</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                    <div class="form-group  col-md-6">
+                        <label for="VidU_Id">Selecciona Vida Util:</label>
+                        <select id="VidU_Id" name="VidU_Id" class="form-control">
+                            <option value="">Selecciona Vida Util</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Acti_FechaAdquisicion" class="control-label">Fecha de Adquisición:</label>
+                        <input asp-for="Acti_FechaAdquisicion" class="form-control" placeholder="Ingrese la fecha de adquisición del activo" />
+                        <span asp-validation-for="Acti_FechaAdquisicion" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label for="Cate_Id">Selecciona una Categoria:</label>
+                        <select id="Cate_Id" name="Cate_Id" class="form-control">
+                            <option value="">Selecciona un empleado</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Agregar" class="btn btn-secondary" />
+                    </div>
+                </div>
+                </div>
+
+        </form>
+    </div>
+</div>
+
+
+<script>
+    async function obtenerListaEmpleados() {
+        try {
+            const response = await fetch('https://localhost:44311/API/Empleados/listaEmpleados');
+            if (!response.ok) {
+                throw new Error('Error al obtener la lista de empleados');
+            }
+            const data = await response.json();
+
+            $("#Empl_Id").empty().append('<option value="">Selecciona un empleado</option>');
+            $.each(data, function (key, empleado) {
+                $("#Empl_Id").append(`<option value="${empleado.empl_Id}">${empleado.nombre}</option>`);
+            });
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    obtenerListaEmpleados();
+</script>
+
+
+<script>
+    async function obtenerVidaUtil() {
+        try {
+            const response = await fetch('https://localhost:44311/API/Activo/listaVidaUtil');
+            if (!response.ok) {
+                throw new Error('Error al obtener la lista de vida util');
+            }
+            const data = await response.json();
+
+            $("#VidU_Id").empty().append('<option value="">Selecciona un empleado</option>');
+            $.each(data, function (key, vida) {
+                $("#VidU_Id").append(`<option value="${vida.vidU_Id}">${vida.vidU_VidaEstimada}</option>`);
+            });
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    obtenerVidaUtil();
+</script>
+
+
+
+<script>
+    async function obtenerCategorias() {
+        try {
+            const response = await fetch('https://localhost:44311/API/Activo/listaCategoria');
+            if (!response.ok) {
+                throw new Error('Error al obtener la lista de categoria');
+            }
+            const data = await response.json();
+
+            $("#Cate_Id").empty().append('<option value="">Selecciona un empleado</option>');
+            $.each(data, function (key, empleado) {
+                $("#Cate_Id").append(`<option value="${empleado.cate_Id}">${empleado.cate_Descripcion}</option>`);
+            });
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    obtenerCategorias();
+</script>

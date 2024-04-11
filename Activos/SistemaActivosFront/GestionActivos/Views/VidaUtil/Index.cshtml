@@ -1,0 +1,177 @@
+﻿@model IEnumerable<SistemasActivos.API.Model.VidaUtilViewmodel>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+
+<h2>Vida Util</h2>
+<br />
+
+<div class="collapse" id="CollapseActualizar">
+    <div class="card card-body">
+        @Html.Partial("_Update", new SistemasActivos.API.Model.VidaUtilViewmodel())
+
+    </div>
+</div>
+
+<div class="collapse" id="CollapseCrear">
+    <div class="card card-body">
+        @Html.Partial("_Create", new SistemasActivos.API.Model.VidaUtilViewmodel())
+
+    </div>
+</div>
+
+<div class="collapsable show" id="CollapseTabla">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+            <div class="x_title">
+                <a asp-action="Create" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseCrear, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample">Nuevo<i class="fas fa-plus"></i> </a>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box table-responsive">
+                            <p class="text-muted font-13 m-b-30">
+                                Tabla Usuarios
+                            </p>
+
+                            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.VidU_Id)
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.VidU_Descripcion)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.VidU_VidaEstimada)
+                                        </th>
+
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.VidU_Id)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.VidU_Descripcion)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.VidU_VidaEstimada)
+                                            </td>
+
+                                            <td align="center">
+
+
+                                                @*<a asp-action="Edit" asp-route-id="@item.VidU_Id" class="btn btn-primary"
+                                                       data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false"
+                                                       aria-controls="collapseExample" onclick="LLenarCollapse('@item.VidU_Id')">
+                                                        <i class="fas fa-edit btn-xs"></i> Editar
+                                                    </a>*@
+                                                <a asp-action="Edit" asp-route-id="@item.VidU_Id" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.VidU_Id')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>
+
+                                                @*<a class="btn btn-info" href="@Url.Action("Details", new { id = item.VidU_Id })">
+                                                        <i class="fas fa-info-circle btn-xs"></i> Detalles
+                                                    </a>*@
+                                                @*<a href="@Url.Action("Details", "VidU_Id", new {VidU_Id = item.VidU_Id})" class="mdi mdi-eye btn btn-warning mr-2">detalle</a>*@
+                        <a href="@Url.Action("Details", "VidaUtil", new {VidU_Id = item.VidU_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+
+                                                @*<a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.VidU_Id"
+                                                       data-toggle="modal" data-target="#ModalEliminar"
+                                                       onclick="ObtenerDelete('@item.VidU_Id')">
+                                                        <i class="fas fa-trash-alt btn-xs"></i> Eliminar
+                                                    </a>*@
+                                                <a asp-action="Eliminar" asp-route-id="@item.VidU_Id" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.VidU_Id')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Eliminar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h3>Esta seguro de eliminar este registro?</h3>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("_Delete", new SistemasActivos.API.Model.VidaUtilViewmodel())
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function LLenarCollapse(id) {
+        //$(".editar-depa").click(function () {
+        console.log("entra?");
+        //var id = $(this).data("depa-id");
+        var url = "https://localhost:44311/API/VidaUtil/LlenarVidaUtil/" + id;
+        console.log(url);
+        fetch(url).then(function (result) {
+            if (result.ok) {
+                console.log("entra?");
+                return result.json();
+            }
+            else {
+                console.log("No entra");
+            }
+        }).then(function (data) {
+            console.log("data = " + data);
+            var descripcion = data.descripcion;
+
+            console.log("Id=" + id);
+            console.log("des=" + data.descripcion);
+
+            $("#vidu_Id").val(id);
+            $("#txtDescripcion").val(data.descripcion);
+            $("#ddlcate").val(data.cate);
+            $("#txtestimado").val(data.estimado);
+
+        });
+    }
+
+
+    function ObtenerDelete(id) {
+        $("#viduid").val(id);
+        console.log("id" + id);
+        sessionStorage.setItem('sess', id);
+    }
+    function validarId() {
+        var valor = sessionStorage.getItem('sess');
+        if (valor != $("#id").val()) {
+            $("#btnEliminar").attr("name", "invalido")
+        }
+        sessionStorage.clear();
+    }
+</script>

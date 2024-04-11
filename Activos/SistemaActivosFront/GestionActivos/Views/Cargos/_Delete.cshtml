@@ -1,0 +1,11 @@
+﻿@model GestionActivos.Models.CargosViewModel
+
+<div>
+    <h4>Eliminar cargo</h4>
+    <hr />
+    <form asp-action="Delete">
+        <input hidden asp-for="Carg_Id" class="form-control" id="txtCargId1" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+﻿@model SistemasActivos.API.Model.VidaUtilViewmodel
+
+<div>
+    <hr />
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VidU_Id" id="viduid" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

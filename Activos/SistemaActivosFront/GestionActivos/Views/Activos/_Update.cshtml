@@ -1,0 +1,83 @@
+﻿@model SistemaActivos.Common.Model.ActivosViewmodel
+
+<h4>ActivosViewmodel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="_Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class=" col-md-6">
+                    <label for="Acti_Url">Seleccionar imagen:</label>
+                    <input type="file" id="imageInput" class="form-control" accept="image/*">
+                    <div id="imagePreview"></div>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Acti_Url" class="control-label"></label>
+                    <input asp-for="Acti_Url" class="form-control" />
+                    <span asp-validation-for="Acti_Url" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-6">
+                    <label asp-for="Acti_Descripcion" class="control-label">Descripción:</label>
+                    <input asp-for="Acti_Descripcion" class="form-control" placeholder="Ingrese la descripción del activo" />
+                    <span asp-validation-for="Acti_Descripcion" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Acti_Precio" class="control-label"></label>
+                    <input asp-for="Acti_Precio" class="form-control" />
+                    <span asp-validation-for="Acti_Precio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class=" col-md-6">
+                    <label asp-for="Acti_Marca" class="control-label"></label>
+                    <input asp-for="Acti_Marca" class="form-control" />
+                    <span asp-validation-for="Acti_Marca" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Acti_Modelo" class="control-label"></label>
+                    <input asp-for="Acti_Modelo" class="form-control" />
+                    <span asp-validation-for="Acti_Modelo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class=" col-md-6">
+                    <label asp-for="Acti_NoSerio" class="control-label"></label>
+                    <input asp-for="Acti_NoSerio" class="form-control" />
+                    <span asp-validation-for="Acti_NoSerio" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Empl_Id" class="control-label"></label>
+                    <input asp-for="Empl_Id" class="form-control" />
+                    <span asp-validation-for="Empl_Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class=" col-md-6">
+                        <label asp-for="VidU_Id" class="control-label"></label>
+                        <input asp-for="VidU_Id" class="form-control" />
+                        <span asp-validation-for="VidU_Id" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                        <label asp-for="Acti_FechaAdquisicion" class="control-label"></label>
+                        <input asp-for="Acti_FechaAdquisicion" class="form-control" />
+                        <span asp-validation-for="Acti_FechaAdquisicion" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+</form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

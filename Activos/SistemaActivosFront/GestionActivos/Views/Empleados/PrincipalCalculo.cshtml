@@ -1,0 +1,285 @@
+﻿@model GestionActivos.Models.EmpleadosViewmodel
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Cálculo Listado de Empleados</h1>
+
+        <form id="formulario">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="empleadoId">Selecciona un empleado:</label>
+                    <select id="empleadoId" name="empleadoId" class="form-control">
+                        <option value="">Selecciona un empleado</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="fechaInicio">Fecha de inicio:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio" class="form-control">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="fechaFinal">Fecha final:</label>
+                    <input type="date" id="fechaFinal" name="fechaFinal" class="form-control">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="exportar-btn" type="button" class="btn btn-primary">Exportar</button>
+            </div>
+        </form>
+
+        <div class="card-box table-responsive">
+            <p class="text-muted font-13 m-b-30">
+                Activos Generales
+            </p>
+
+            <div id="datatable-responsive_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
+                <div class="col-sm-12">
+                    <table class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;" id="tabla">
+                        <thead>
+                            <tr>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Activo</th>
+                                <th scope="col">Costo Original</th>
+                                <th scope="col">Costo Depreciable</th>
+                                <th scope="col">Tasa Anual</th>
+                                <th scope="col">Precio en Libros</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+    <script>
+        async function obtenerListaEmpleados() {
+            try {
+                const response = await fetch('https://localhost:44311/API/Empleados/listaEmpleados');
+                if (!response.ok) {
+                    throw new Error('Error al obtener la lista de empleados');
+                }
+                const data = await response.json();
+
+                $("#empleadoId").empty().append('<option value="">Selecciona un empleado</option>');
+                $.each(data, function (key, empleado) {
+                    $("#empleadoId").append(<option value="${empleado.empl_Id}">${empleado.nombre}</option>);
+                });
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        obtenerListaEmpleados();
+
+        $('#exportar-btn').click(function () {
+            const empleadoId = $('#empleadoId').val();
+            const fechaInicio = $('#fechaInicio').val();
+            const fechaFinal = $('#fechaFinal').val();
+
+            descargarExcel(empleadoId, fechaInicio, fechaFinal);
+        });
+
+        // descargaaaa
+        async function descargarExcel(empleadoId, fechaInicio, fechaFinal) {
+            try {
+                console.log('Realizando petición al servidor...');
+                const url = https://localhost:44311/API/Empleados/Listado?empleadoId=${empleadoId}&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal};
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Error al obtener los datos');
+                }
+                const data = await response.json();
+                console.log('Datos recibidos del servidor:', data);
+                const nombreEmpleado = $('#empleadoId option:selected').text();
+
+                generarArchivoExcel(data, nombreEmpleado);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
+        function generarArchivoExcel(responseData, nombreEmpleado) {
+            try {
+                if (responseData.hasOwnProperty('data')) {
+
+                    const data = responseData.data;
+
+
+
+
+                    const dataRows = data.map(obj => ({
+                        'Categoría': obj.cate_Descripcion,
+                        'Activo': obj.acti_Descripcion,
+                        'No Serie': obj.acti_NoSerio,
+                        'Fecha Adquicision': obj.acti_FechaAdquisicion,
+                        'Costo Original': obj.costoOriginal.toFixed(2),
+                        'Costo Depreciable': obj.totalCostoDepreciable.toFixed(4),
+                        'Tasa Anual': obj.tasaAnual,
+                        'Precio en Libros': obj.totalValorEnLibros.toFixed(18),
+                        'Enero': obj.enero,
+                        'Febrero': obj.febrero,
+                        'Marzo': obj.marzo,
+                        'Abril': obj.abril,
+                        'Mayo': obj.mayo,
+                        'Junio': obj.junio,
+                        'Julio': obj.julio,
+                        'Agosto': obj.agosto,
+                        'Septiembre': obj.septiembre,
+                        'Octubre': obj.octubre,
+                        'Noviembre': obj.noviembre,
+                        'Diciembre': obj.diciembre,
+                        'Depreciacion Periodo': obj.depreciacionPeriodo,
+                        'Depreciacion Acumulada': obj.depreciacionAcumulada,
+                        'Valor en Libros': obj.valorEnLibros
+                    }));
+
+                    const eneroColumn = 'I'; // Suponiendo que la columna de enero es la 'I'
+                    const eneroSumFormula = SUM(${ eneroColumn }2: ${ eneroColumn }${ dataRows.length + 1 });
+                    console.log('hh' + eneroSumFormula);
+                    const totalRow = {
+                        'Categoría': 'Total',
+                        'Activo': '',
+                        'No Serie': '',
+                        'Fecha Adquicision': '',
+                        'Costo Original': data.reduce((acc, obj) => acc + obj.totalCostoOriginal, 0).toFixed(2),
+                        'Costo Depreciable': data.reduce((acc, obj) => acc + obj.totalCostoDepreciable, 0).toFixed(2),
+                        'Tasa Anual': '',
+                        'Precio en Libros': '',
+                        'Enero': { formula: eneroSumFormula },
+                        'Febrero': '',
+                        'Marzo': '',
+                        'Abril': '',
+                        'Mayo': '',
+                        'Junio': '',
+                        'Julio': '',
+                        'Agosto': '',
+                        'Septiembre': '',
+                        'Octubre': '',
+                        'Noviembre': '',
+                        'Diciembre': data.reduce((acc, obj) => acc + obj.totalDepreciacionMensual, 0).toFixed(2),
+                        'Depreciacion Periodo': data.reduce((acc, obj) => acc + obj.totalDepreciacionPeriodo, 0).toFixed(2),
+                        'Depreciacion Acumulada': data.reduce((acc, obj) => acc + obj.totalDepreciacionAcumulada, 0).toFixed(2),
+                        'Valor en Libros': data.reduce((acc, obj) => acc + obj.totalValorEnLibros, 0).toFixed(2)
+                    };
+
+
+
+
+                    // Concatenar las filas de datos y las filas de totales
+                    const allRows = [...dataRows, totalRow];
+
+                    const wb = XLSX.utils.book_new();
+                    const ws = XLSX.utils.json_to_sheet(allRows);
+
+                    const wscols = [
+                        { wch: 20 },
+                        { wch: 30 },
+                        { wch: 15 },
+                        { wch: 20 },
+                        { wch: 15 },
+                        { wch: 25 }
+                    ];
+
+                    ws['!cols'] = wscols;
+
+                    XLSX.utils.book_append_sheet(wb, ws, 'Empleados');
+                    const wbout = XLSX.write(wb, { type: 'binary', bookType: 'xlsx' });
+                    const blob = new Blob([s2ab(wbout)], { type: 'application/octet-stream' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = REPORTE_${ nombreEmpleado }.xlsx;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                } else {
+                    console.log('La respuesta JSON no contiene la propiedad "data".');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
+        function s2ab(s) {
+            const buf = new ArrayBuffer(s.length);
+            const view = new Uint8Array(buf);
+            for (let i = 0; i < s.length; i++) {
+                view[i] = s.charCodeAt(i) & 0xFF;
+            }
+            return buf;
+        }
+    </script>
+
+
+
+    @* tabla en el indwsx *@
+    <script>
+        async function obtenerListaActivos() {
+            try {
+                const response = await fetch('https://localhost:44311/API/Empleados/Listado');
+                if (!response.ok) {
+                    throw new Error('Error al obtener la lista de activos');
+                }
+                const responseData = await response.json();
+
+                console.log('Respuesta JSON:', responseData);
+
+                if (responseData.hasOwnProperty('data')) {
+                    const data = responseData.data;
+                    if (data.length > 0) {
+                        const activo = data[0];
+                        console.log('Categoría:', activo.cate_Descripcion);
+                        console.log('Activo:', activo.acti_Descripcion);
+                        console.log('Costo Original:', activo.totalCostoOriginal.toFixed(2));
+                        console.log('Costo Depreciable:', activo.totalCostoDepreciable.toFixed(4));
+                        console.log('Tasa Anual:', activo.tasaAnual);
+                        console.log('Precio en Libros:', activo.totalValorEnLibros.toFixed(18));
+
+                        $("#tabla tbody").append(`
+                                                            <tr>
+                                                                <td>${activo.cate_Descripcion}</td>
+                                                                <td>${activo.acti_Descripcion}</td>
+                                                                <td>${activo.totalCostoOriginal.toFixed(2)}</td>
+                                                                <td>${activo.totalCostoDepreciable.toFixed(4)}</td>
+                                                                <td>${activo.tasaAnual}</td>
+                                                                <td>${activo.totalValorEnLibros.toFixed(18)}</td>
+                                                            </tr>
+                                                        `);
+                    } else {
+                        console.log('No se encontraron datos de activos.');
+                    }
+                } else {
+                    console.log('La respuesta JSON no contiene la propiedad "data".');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', obtenerListaActivos);
+
+    </script>
+
+
+
+</body>
