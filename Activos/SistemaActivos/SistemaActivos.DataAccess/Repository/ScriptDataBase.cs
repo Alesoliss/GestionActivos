@@ -114,10 +114,10 @@ namespace SistemaActivos.DataAccess.Repository
         public static string usuaeliminar = "[Acce].[SP_Usuarios_Eliminar]";
         public static string usuainsertar = "[Acce].[SP_Usuarios_Insertar]";
         public static string usuactualizar = "[Acce].[SP_Usuarios_Actualizar]";
-
+        public static string usuarescontra = "[Acce].[SP_Usuarios_RecuperarContrasenia]";
         #endregion
-      
-       #region vidautil
+
+        #region vidautil
         public static string vieliminar = "[Acti].[SP_VidaUtil_Eliminar]";
         public static string viuinsertar = "[Acti].[SP_VidaUtil_Insertar]";
         public static string viuactualizar = "[Acti].[SP_VidaUtil_Actulizar]";

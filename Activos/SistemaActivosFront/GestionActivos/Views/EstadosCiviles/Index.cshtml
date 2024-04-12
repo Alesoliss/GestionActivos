@@ -19,7 +19,11 @@
         @Html.Partial("_Update", new GestionActivos.Models.EstadosCivilesViewModel())
     </div>
 </div>
-
+<div class="collapse" id="CollapseCrear">
+    <div class="card card-body">
+        @Html.Partial("_Create", new GestionActivos.Models.EstadosCivilesViewModel())
+    </div>
+</div>
 <div class="collapse show" id="CollapseTabla">
 
     <table class="table">

@@ -585,7 +585,7 @@ namespace SistemaDeActivos.BusinessLogic
             }
         }
 
-        public ServiceResult BuscarDetallecategoria(int codigo)
+        public ServiceResult BuscarDetalleSucursal(int codigo)
         {
             var result = new ServiceResult();
             try

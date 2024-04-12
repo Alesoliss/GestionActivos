@@ -90,6 +90,20 @@ namespace SistemaActivos.DataAccess.Repository
             }
         }
 
+        public RequestStatus ActualizarContra(tbUsuario item)
+        {
+            string sql = ScriptDataBase.usuarescontra;
+
+            using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
+            {
+                var parametro = new DynamicParameters();
+                parametro.Add("@Usua_Id", item.Usua_Id);
+                parametro.Add("", item.Usua_Contra);
+                var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
+
+                return new RequestStatus { CodeStatus = result, MessageStatus = "" };
+            }
+        }
 
         public IEnumerable<tbUsuario> FindUsuario(int codigo)
         {

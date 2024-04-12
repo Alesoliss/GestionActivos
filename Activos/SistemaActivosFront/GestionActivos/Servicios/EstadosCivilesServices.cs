@@ -40,7 +40,31 @@ namespace GestionActivos.Servicios
                 throw;
             }
         }
-
+        public async Task<ServiceResult> CrearEstadoCivil(EstadosCivilesViewModel item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Post<EstadosCivilesViewModel, ServiceResult>(req =>
+                {
+                    req.Path = $"/API/EstadosCiviles/Create";
+                    req.Content = item;
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
         public async Task<ServiceResult> ActualizarEstadoCivil(EstadosCivilesViewModel item)
         {
             var result = new ServiceResult();

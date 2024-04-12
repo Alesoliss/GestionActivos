@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GestionActivos.Models.SucursalesViewModel>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+@foreach (var sucu in Model)
+{
+<div>
+    <h4>SucursalesViewModel</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Sucu_Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Sucu_Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Muni_Codigo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Muni_Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Sucu_DireccionExacta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Sucu_DireccionExacta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Sucu_FechaCreacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Sucu_FechaCreacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Sucu_FechaModificacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Sucu_FechaModificacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Depa_Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Depa_Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Muni_Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Muni_Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Uuno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Uuno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => sucu.Udos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => sucu.Udos)
+        </dd>
+    </dl>
+</div>
+}
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

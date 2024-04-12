@@ -143,5 +143,30 @@ namespace GestionActivos.Servicios
                 throw;
             }
         }
+
+        public async Task<ServiceResult> DetallesSucursal(int Sucu_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Get<IEnumerable<SucursalesViewModel>, IEnumerable<SucursalesViewModel>>(req =>
+                {
+                    req.Path = $"/API/Sucursales/DetallesSucursal?Sucu_Id={Sucu_Id}";
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
     }
 }

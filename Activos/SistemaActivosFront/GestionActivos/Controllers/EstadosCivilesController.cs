@@ -30,7 +30,26 @@ namespace GestionActivos.Controllers
             }
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(EstadosCivilesViewModel item)
+        {
 
+            var list = await _estadosCivilesServices.CrearEstadoCivil(item);
+            if (list.Success)
+            {
+                TempData["Exito"] = "El Departamento se agrego con exito";
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                TempData["Error"] = "El Departamento no se pudo agregar";
+                return RedirectToAction("Index");
+
+            }
+
+        }
 
         [HttpPost]
         public async Task<IActionResult> Update(EstadosCivilesViewModel item)

@@ -93,17 +93,17 @@ namespace SistemaActivos.DataAccess.Repository
 
         }
 
-        public IEnumerable<tbCategorias> FindDetalleSucursal(int id)
+        public IEnumerable<tbSucursales> FindDetalleSucursal(int id)
         {
             string sql = ScriptDataBase.SucursalesBuscar;
 
-            List<tbCategorias> result = new List<tbCategorias>();
+            List<tbSucursales> result = new List<tbSucursales>();
 
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {
                 var parametro = new DynamicParameters();
                 parametro.Add("Sucu_Id", id);
-                result = db.Query<tbCategorias>(sql, parametro, commandType: System.Data.CommandType.Text).ToList();
+                result = db.Query<tbSucursales>(sql, parametro, commandType: System.Data.CommandType.StoredProcedure).ToList();
                 return result;
             }
         }

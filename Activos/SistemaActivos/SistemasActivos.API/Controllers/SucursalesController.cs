@@ -112,5 +112,13 @@ namespace SistemasActivos.API.Controllers
             }
 
         }
+
+        [HttpGet("DetallesSucursal")]
+        public IActionResult Details(int Sucu_Id)
+        {
+            var list = _generalServices.BuscarDetalleSucursal(Sucu_Id);
+
+            return Ok(list);
+        }
     }
 }

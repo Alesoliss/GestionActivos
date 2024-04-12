@@ -147,6 +147,27 @@ namespace GestionActivos.Controllers
             }
         }
 
+        public async Task<IActionResult> Details(int Sucu_Id)
+        {
+            var list = await _sucursalesServices.DetallesSucursal(Sucu_Id);
+            if (list.Success)
 
+            {
+                try
+                {
+                    var data = list.Data;
+
+                    return View(data);
+                }
+                catch (Exception ex)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
     }
 }
