@@ -86,11 +86,11 @@
                                                        data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false"
                                                        aria-controls="collapseExample" onclick="LLenarCollapse('@item.Usua_Id')">
                                                         <i class="fas fa-edit btn-xs"></i> Editar
-                                                    </a>
+                                                    </a>|
 
-                                                    <a asp-action="ReestablecerContra" class="btn btn-danger" asp-route-id="@item.Usua_Id" data-toggle="collapse" data-target="#collapseResta, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="ObtenerDelete('@item.Usua_Id')"><i class="fas fa-trash-alt btn-xs">Restablecer</i></a>
+                                                    <a asp-action="ReestablecerContra" class="btn btn-danger" asp-route-id="@item.Usua_Id" data-toggle="collapse" data-target="#collapseResta, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="ObtenerDelete('@item.Usua_Id')"><i class="fas fa-trash-alt btn-xs">Restablecer</i></a>|
 
-                                                    <a href="@Url.Action("Details", "Usuario", new {Usua_Id = item.Usua_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+                                                    <a href="@Url.Action("Details", "Usuario", new {Usua_Id = item.Usua_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>|
 
                                                     <a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.Usua_Id"
                                                        data-toggle="modal" data-target="#ModalEliminar"

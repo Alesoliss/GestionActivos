@@ -76,13 +76,13 @@
                                                        aria-controls="collapseExample" onclick="LLenarCollapse('@item.VidU_Id')">
                                                         <i class="fas fa-edit btn-xs"></i> Editar
                                                     </a>*@
-                                                <a asp-action="Edit" asp-route-id="@item.VidU_Id" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.VidU_Id')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>
+                                                <a asp-action="Edit" asp-route-id="@item.VidU_Id" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.VidU_Id')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>|
 
                                                 @*<a class="btn btn-info" href="@Url.Action("Details", new { id = item.VidU_Id })">
                                                         <i class="fas fa-info-circle btn-xs"></i> Detalles
                                                     </a>*@
                                                 @*<a href="@Url.Action("Details", "VidU_Id", new {VidU_Id = item.VidU_Id})" class="mdi mdi-eye btn btn-warning mr-2">detalle</a>*@
-                        <a href="@Url.Action("Details", "VidaUtil", new {VidU_Id = item.VidU_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+                        <a href="@Url.Action("Details", "VidaUtil", new {VidU_Id = item.VidU_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>|
 
                                                 @*<a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.VidU_Id"
                                                        data-toggle="modal" data-target="#ModalEliminar"

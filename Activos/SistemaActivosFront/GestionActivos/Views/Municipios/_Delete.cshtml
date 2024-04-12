@@ -1,15 +1,10 @@
 ﻿@model GestionActivos.Models.MunicipiosViewModel
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>MunicipiosViewModel</h4>
-    <hr />
     <form asp-action="Delete">
         <input type="hidden" asp-for="Muni_Codigo" id="Muni_Codi" />
 
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <div class="col-sm-4">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
             <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-        </div>
     </form>
 </div>

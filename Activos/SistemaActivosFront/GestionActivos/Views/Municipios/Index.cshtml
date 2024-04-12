@@ -58,7 +58,7 @@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Muni_Codigo" data-toggle="collapse" data-target="#CollapseActualizar , #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Muni_Codigo')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>|
                         @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-                        <a href="@Url.Action("Details", "Municipios", new {Muni_Codigo = item.Muni_Codigo})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+                        <a href="@Url.Action("Details", "Municipios", new {Muni_Codigo = item.Muni_Codigo})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>|
                         @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
                         <a asp-action="Eliminar" asp-route-id="@item.Muni_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Muni_Codigo')"><i class="mdi mdi-trash-can btn btn-danger ">Eliminar</i></a>
                         @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@

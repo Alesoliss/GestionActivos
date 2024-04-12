@@ -19,31 +19,42 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => esta.EstD_Descripcion)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => esta.Uuno)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => esta.Uuno)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => esta.EstD_FechaCracion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => esta.EstD_FechaCracion)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => esta.Udos)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => esta.Udos)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => esta.EstD_FechaModificacion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => esta.EstD_FechaModificacion)
-        </dd>
+      
     </dl>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => esta.Uuno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => esta.EstD_FechaCracion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => esta.Udos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => esta.EstD_FechaModificacion)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => esta.Uuno)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => esta.EstD_FechaCracion)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => esta.Udos)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => esta.EstD_FechaModificacion)
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 }
 <div>

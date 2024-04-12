@@ -52,11 +52,11 @@
 
                     <td>
                         @*<button data-depa-id="@item.Depa_Codigo" data-toggle="collapse" data-target="#CollapseActualizar" aria-expanded="false" aria-controls="collapseExample"><i class="mdi mdi-pencil btn btn-primary mr-2 editar-depa">Editar</i></button>*@
-                        <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="fas fa-edit btn-xs">Editar</i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Depa_Codigo" class="btn btn-primary" data-toggle="collapse" data-target="#CollapseActualizar, #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Depa_Codigo')"><i class="fas fa-edit btn-xs">Editar</i></a>|
 
                         @*<a href="@Url.Action("Details", "Departamento", new { Depa_Codigo = item.Depa_Codigo })" class="btn btn-info btn-sm">Detalles <i class="tim-icons icon-zoom-split"></i></a>*@
                         @*<a asp-action="Details" asp-route-id="@item.Depa_Codigo"><i class="mdi mdi-eye btn btn-warning mr-2">Detalles</i></a>*@
-                        <a href="@Url.Action("Details", "Departamentos", new {Depa_Codigo = item.Depa_Codigo})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
+                        <a href="@Url.Action("Details", "Departamentos", new {Depa_Codigo = item.Depa_Codigo})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>|
                         @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
                         <a asp-action="Eliminar" class="btn btn-danger" asp-route-id="@item.Depa_Codigo" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Depa_Codigo')"><i class="fas fa-trash-alt btn-xs">Eliminar</i></a>
                         @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
