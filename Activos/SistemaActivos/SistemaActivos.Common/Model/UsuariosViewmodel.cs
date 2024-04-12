@@ -29,7 +29,7 @@ namespace SistemaActivos.Common.Model
         public string Udos { get; set; }
 
         [NotMapped]
-        public string Rol { get; set; }
+        public string Role_Descripcion { get; set; }
 
     }
 }

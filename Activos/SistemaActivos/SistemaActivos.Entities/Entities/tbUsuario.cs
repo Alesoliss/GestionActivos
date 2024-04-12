@@ -56,7 +56,7 @@ namespace SistemaActivos.Entities.Entities
         public string Udos { get; set; }
 
         [NotMapped]
-        public string Rol { get; set; }
+        public string Role_Descripcion { get; set; }
 
         public virtual tbEmpleados Empl { get; set; }
         public virtual tbRoles Role { get; set; }

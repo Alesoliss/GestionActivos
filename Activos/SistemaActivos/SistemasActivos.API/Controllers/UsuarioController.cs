@@ -125,7 +125,7 @@ namespace SistemasActivos.API.Controllers
             var nombre = llenar.FirstOrDefault()?.Usua_Nombre;
             var contra = llenar.FirstOrDefault()?.Usua_Contra;
             var empleado = llenar.FirstOrDefault()?.Empleado;
-            var rol = llenar.FirstOrDefault()?.Rol;
+            var rol = llenar.FirstOrDefault()?.Role_Descripcion;
             var admin = llenar.FirstOrDefault()?.Usua_Admin;
             var idRol = llenar.FirstOrDefault()?.Role_Id;
             var idEmpl = llenar.FirstOrDefault()?.Empl_Id;

@@ -43,12 +43,12 @@ namespace SistemaActivos.DataAccess.Repository
             using (var db = new SqlConnection(SistemaActivosContext.ConnectionString))
             {
                 var parametro = new DynamicParameters();
-                parametro.Add("@Usua_Nombre", item.Usua_Nombre);
-                parametro.Add("@Usua_Contrasenia", item.Usua_Contra);
+                parametro.Add("@Usua_Usuario", item.Usua_Nombre);
+                parametro.Add("@Usua_Clave", item.Usua_Contra);
                 parametro.Add("@Empl_Id", item.Empl_Id);
                 parametro.Add("@Role_Id", item.Role_Id);
-                parametro.Add("@Usua_Admin", item.Usua_Admin);
-                parametro.Add("@Usua_UsuarioCreacion", item.Usua_UsuarionCreacion);
+                parametro.Add("@Usua_IsAdmin", item.Usua_Admin);
+                parametro.Add("@Usua_Creacion", item.Usua_UsuarionCreacion);
                 parametro.Add("@Usua_FechaCreacion", item.Usua_FechaCreacion);
                 var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
 
