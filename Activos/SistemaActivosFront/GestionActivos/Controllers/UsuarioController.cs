@@ -118,6 +118,24 @@ namespace GestionActivos.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> ReestablecerContra(UsuariosViewmodel item)
+        {
+
+            var list = await _usuariosService.Reestablecer(item);
+            if (list.Success)
+            {
+                TempData["Exito"] = "La contraseña se cambio con exito";
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                TempData["Error"] = "No se pudo reestablecer contraseña ";
+                return RedirectToAction("Index");
+
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> Delete(UsuariosViewmodel item, int Usua_Id)

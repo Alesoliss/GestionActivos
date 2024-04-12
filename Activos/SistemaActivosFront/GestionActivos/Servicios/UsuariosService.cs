@@ -120,6 +120,32 @@ namespace GestionActivos.Servicios
             }
         }
 
+        public async Task<ServiceResult> Reestablecer(UsuariosViewmodel item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = await _api.Put<UsuariosViewmodel, ServiceResult>(req =>
+                {
+                    req.Path = $"/API/Usuario/ReestablecerContra";
+                    req.Content = item;
+                });
+                if (!response.Success)
+                {
+                    return result.FromApi(response);
+                }
+                else
+                {
+                    return result.Ok(response.Data);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(Helpers.GetMessage(ex));
+                throw;
+            }
+        }
+
         public async Task<ServiceResult> EliminarUsuario(UsuariosViewmodel item, int Usua_Id)
         {
             var result = new ServiceResult();

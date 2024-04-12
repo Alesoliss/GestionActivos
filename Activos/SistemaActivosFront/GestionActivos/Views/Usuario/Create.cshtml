@@ -16,13 +16,30 @@
             <input asp-for="Usua_Contra" class="form-control" />
             <span asp-validation-for="Usua_Contra" class="text-danger"></span>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label class="control-label"> Es Admin?</label>
             <input class="from-check-input" type="checkbox" id="Usua_Admin" name="Usua_Admin" value="Usua_Admin" /> @Html.DisplayNameFor(model => model.Usua_Admin)
 
             <span asp-validation-for="Usua_Admin" class="text-danger"></span>
+
+        </div>*@
+
+    <div class="form-row">
+        <label asp-for="Usua_Admin" class="control-label"></label>
+
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                <input asp-for="Usua_Admin" value="True" class="join-btn" type="radio" id="femaleRadio" />
+                <label class="form-check-label" for="femaleRadio">Si</label>
+            </label>
+            <label class="btn btn-dark" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                <input asp-for="Usua_Admin" value="False" class="join-btn" type="radio" id="maleRadio" />
+                <label class="form-check-label" for="maleRadio">No</label>
+            </label>
+            <span asp-validation-for="Usua_Admin" class="text-danger"></span>
         </div>
     </div>
+   
 
 
     <div class="col-sm-6">
@@ -50,7 +67,7 @@
 
     </div>
 
-
+</div>
     <div class="col-sm-6">
 
         <div class="col-sm-4">
@@ -58,7 +75,7 @@
         </div>
 
         <div class="col-sm-4">
-            <input asp-action="Index" value="Agregar" class="btn btn-secondary" />
+            <a asp-action="Index" class="btn btn-secondary" >Regresar</a>
         </div>
 
     </div>

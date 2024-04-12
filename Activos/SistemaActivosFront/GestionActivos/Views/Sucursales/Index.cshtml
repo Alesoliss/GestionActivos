@@ -19,6 +19,7 @@
         @Html.Partial("_Update", new GestionActivos.Models.SucursalesViewModel())
     </div>
 </div>
+
 <div class="collapse show" id="CollapseTabla">
     <p>
         @*<a asp-action="Create">Create New</a>*@
@@ -67,11 +68,9 @@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Sucu_Id" data-toggle="collapse" data-target="#CollapseActualizar , #CollapseTabla" aria-expanded="false" aria-controls="collapseExample" onclick="LLenarCollapse('@item.Sucu_Id')"><i class="mdi mdi-pencil btn btn-primary mr-2">Editar</i></a>|
 
-                        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
                         <a href="@Url.Action("Details", "Sucursales", new {Sucu_Id = item.Sucu_Id})" class="btn btn-info"><i class="fas fa-info-circle btn-xs"></i>Detalle</a>
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                         <a asp-action="Eliminar" class="btn btn-danger" asp-route-id="@item.Sucu_Id" data-toggle="modal" data-target="#ModalEliminar" onclick="ObtenerDelete('@item.Sucu_Id')"><i class="fas fa-trash-alt btn-xs">Eliminar</i></a>
-                        @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                     </td>
                 </tr>
             }
@@ -121,14 +120,14 @@
             console.log("data = " + data);
             var descripcion = data.descripcion;
 
-            console.log("Id=" + id);
-            console.log("des=" + data.idde);
+            console.log("Id=" + data.municipio);
+            console.log("des=" + data.departamento);
 
             $("#sucuId").val(id);
             $("#txtdescrip").val(data.descripcion);
             $("#txtdireccion").val(data.direccion);
             $("#muni_Id").val(data.municipio);
-            $("#dept_Id").val(data.departamento);
+            $("#depa_Id").val(data.departamento);
 
         });
     }

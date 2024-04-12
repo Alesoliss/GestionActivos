@@ -557,6 +557,28 @@ namespace SistemaDeActivos.BusinessLogic
             }
         }
 
+        public ServiceResult ReestablecerContra(tbUsuario item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lost = _usuariosRepository.ActualizarContra(item);
+
+                if (lost.CodeStatus > 0)
+                {
+                    return result.Ok(lost);
+                }
+                else
+                {
+                    return result.Error(lost);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+
+            }
+        }
 
         public ServiceResult BuscarDetalleUsuario(int codigo)
         {

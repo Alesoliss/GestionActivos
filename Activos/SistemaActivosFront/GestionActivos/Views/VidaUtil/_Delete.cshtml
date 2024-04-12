@@ -5,7 +5,9 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="VidU_Id" id="viduid" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <div class="col-sm-4">
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
     </form>
 </div>

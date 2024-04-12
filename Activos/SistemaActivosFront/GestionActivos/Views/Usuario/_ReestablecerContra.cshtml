@@ -1,0 +1,29 @@
+﻿@model SistemaActivos.Common.Model.UsuariosViewmodel
+
+<h4>UsuariosViewmodel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="ReestablecerContra">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Usua_Id" class="form-control" id="UsuaId" hidden/>
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="Usua_Contra" class="control-label"></label>
+                <input asp-for="Usua_Contra" class="form-control" />
+                <span asp-validation-for="Usua_Contra" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

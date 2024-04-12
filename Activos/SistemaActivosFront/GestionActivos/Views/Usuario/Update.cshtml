@@ -14,12 +14,21 @@
             <input asp-for="Usua_Nombre" class="form-control" id="txtNombre" />
             <span asp-validation-for="Usua_Nombre" class="text-danger"></span>
         </div>
-       
-        <div class="form-group">
-            <label class="control-label"> Es Admin?</label>
-            <input type="checkbox" value="Usua_Admin" class="form-check" id="chkAdmin" />
 
-            <span asp-validation-for="Usua_Admin" class="text-danger"></span>
+        <div class="form-group">
+            <label asp-for="Usua_Admin" class="control-label"></label>
+
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <input asp-for="Usua_Admin" value="True" class="join-btn" type="radio" id="femaleRadio" />
+                    <label class="form-check-label" for="femaleRadio">Si</label>
+                </label>
+                <label class="btn btn-dark" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <input asp-for="Usua_Admin" value="False" class="join-btn" type="radio" id="maleRadio" />
+                    <label class="form-check-label" for="maleRadio">No</label>
+                </label>
+                <span asp-validation-for="Usua_Admin" class="text-danger"></span>
+            </div>
         </div>
     </div>
 
@@ -39,7 +48,7 @@
 
         <div class="form-group">
             <label asp-for="Role_Id" class="control-label"></label>
-            <select id="Role_Id" name="Role_Id" class="form-control">
+            <select id="Role_Id" class="form-control">
                 @foreach (var rol in ViewBag.Roles)
                 {
                     <option value="@rol.Value">@rol.Text</option>
@@ -58,10 +67,35 @@
         </div>
 
         <div class="col-sm-4">
-            <input asp-action="Index" value="Agregar" class="btn btn-secondary" />
+            <input type="submit" asp-action="Index" value="Regresar" class="btn btn-secondary" />
         </div>
 
     </div>
 
 </form>
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+<script>
+    async function ObtenerListaRoles() {
+        try {
+            const response = await fetch('https://localhost:44311/API/Usuario/listadoRoles');
+            if (!response.ok) {
+                throw new Error('Error al obtener la lista de empleados');
+            }
+            const data = await response.json();
+
+            $("#Role_Id").empty().append('<option value="">Selecciona un Rol</option>');
+            $.each(data, function (key, empleado) {
+                $("#Role_Id").append(`<option value="${empleado.role_Id}">${empleado.role_Descripcion}</option>`);
+            });
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    ObtenerListaRoles();
+</script>

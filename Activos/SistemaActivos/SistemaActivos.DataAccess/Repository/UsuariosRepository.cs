@@ -98,7 +98,7 @@ namespace SistemaActivos.DataAccess.Repository
             {
                 var parametro = new DynamicParameters();
                 parametro.Add("@Usua_Id", item.Usua_Id);
-                parametro.Add("", item.Usua_Contra);
+                parametro.Add("@Usua_Contrasenia", item.Usua_Contra);
                 var result = db.Execute(sql, parametro, commandType: CommandType.StoredProcedure);
 
                 return new RequestStatus { CodeStatus = result, MessageStatus = "" };

@@ -28,20 +28,20 @@
             </div>
             <div class="col-md-6">
                 <label asp-for="VidU_VidaEstimada" class="control-label"></label>
-                <input asp-for="VidU_VidaEstimada" class="form-control" placeholder="Duracion años"/>
+                <input asp-for="VidU_VidaEstimada" class="form-control" placeholder="Duracion años" />
                 <span asp-validation-for="VidU_VidaEstimada" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
+            <div class="col-sm-4">
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Regresar</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

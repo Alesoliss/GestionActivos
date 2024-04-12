@@ -91,7 +91,29 @@ namespace SistemasActivos.API.Controllers
         }
 
 
+        [HttpPut("ReestablecerContra")]
+        public IActionResult Updatecontra(UsuariosViewmodel item)
+        {
 
+            var model = _mapper.Map<tbUsuario>(item);
+            var modelo = new tbUsuario()
+            {
+                Usua_Id = item.Usua_Id,
+                Usua_Contra = item.Usua_Contra,
+                Usua_UsuarionModificacion = 1,
+                Usua_FechaModificacion = DateTime.Now,
+
+            };
+            var list = _activeService.ReestablecerContra(modelo);
+            if (list.Success)
+            {
+                return Ok(list);
+            }
+            else
+            {
+                return Problem(list.Message);
+            }
+        }
 
 
 
